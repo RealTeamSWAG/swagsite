@@ -1,9 +1,11 @@
 <?php namespace Teamswag\Appsforx\Components;
 
 use Cms\Classes\ComponentBase;
+use Teamswag\Appsforx\Models\Event;
 
 class Events extends ComponentBase
 {
+    public $events;
 
     public function componentDetails()
     {
@@ -20,6 +22,18 @@ class Events extends ComponentBase
 
     public function all()
     {
-        return Models\Events::all()->toArray();
+        return Events::all()->toArray();
+    }
+
+    public function onRun()
+    {
+        $this->events = $this->loadEvents();
+    }
+
+    protected function loadEvents()
+    {
+        $events = Event::all()->toArray();
+
+        return $events;
     }
 }

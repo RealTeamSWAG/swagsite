@@ -1,6 +1,9 @@
-url = "/events"
-[events]
-==
-<p>This is the default markup for component Events</p>
+{% set events = __SELF__.events %}
 
-<small>You can delete this file if you want</small>
+<ul class="event-list">
+    {% for event in events %}
+        <li>
+            {{ event.name }}
+        </li>
+    {% endfor %}
+</ul>
