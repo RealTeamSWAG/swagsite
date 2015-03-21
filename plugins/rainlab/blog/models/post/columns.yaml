@@ -21,6 +21,11 @@ columns:
     searchable: true
     sortable: false
 
+  event:
+    label: event
+    relation: event
+    select: name
+
   created_at:
     label: rainlab.blog::lang.post.created
     type: date

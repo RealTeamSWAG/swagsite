@@ -50,7 +50,8 @@ class Post extends Model
      * Relations
      */
     public $belongsTo = [
-        'user' => ['Backend\Models\User']
+        'user' => ['Backend\Models\User'],
+        'event' => ['Teamswag\Appsforx\Models\Event']
     ];
 
     public $belongsToMany = [
