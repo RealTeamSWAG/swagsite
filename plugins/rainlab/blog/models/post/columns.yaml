@@ -22,7 +22,7 @@ columns:
     sortable: false
 
   event:
-    label: event
+    label: Event
     relation: event
     select: name
 
