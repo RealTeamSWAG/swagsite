@@ -19,8 +19,9 @@ class CreateEventsTable extends Migration
         Schema::create('teamswag_appsforx_events', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('startDate');
-            $table->integer('endDate');
+            $table->string('name', 255);
+            $table->dateTime('startDate');
+            $table->dateTime('endDate');
             $table->integer('teamswag_appsforx_speaker_id')->unsigned();
             $table->timestamps();
         });

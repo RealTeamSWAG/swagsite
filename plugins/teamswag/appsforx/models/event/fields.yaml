@@ -3,6 +3,14 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: Event name
+        type: text
+
+    startDate:
+        label: Start date
+        type: datepicker
+
+    endDate:
+        label: End date
+        type: datepicker

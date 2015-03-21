@@ -13,15 +13,17 @@ class Event extends Model
      */
     public $table = 'teamswag_appsforx_events';
 
+    protected $dates = ['startDate', 'endDate'];
+
     /**
      * @var array Guarded fields
      */
-    protected $guarded = ['*'];
+    protected $guarded = [''];
 
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    protected $fillable = ['name'];
 
     /**
      * @var array Relations

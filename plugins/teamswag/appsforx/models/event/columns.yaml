@@ -3,6 +3,14 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
-        searchable: true
+    name:
+        label: Event name
+        type: text
+
+    startDate:
+        label: Start date
+        type: date
+
+    endDate:
+        label: End date
+        type: date
