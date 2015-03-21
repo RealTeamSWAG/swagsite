@@ -17,4 +17,9 @@ class Events extends ComponentBase
     {
         return [];
     }
+
+    public function all()
+    {
+        return Models\Events::all()->toArray();
+    }
 }

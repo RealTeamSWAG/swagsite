@@ -36,7 +36,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Teamswag\Appsforx\Components\Events'       => 'events',
+            'Teamswag\Appsforx\Components\Events' => 'events',
         ];
     }
 
