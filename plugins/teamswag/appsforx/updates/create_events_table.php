@@ -9,6 +9,7 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('teamswag_appsforx_speakers', function ($table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 255);
             $table->string('first_name', 255);
@@ -16,11 +17,11 @@ class CreateEventsTable extends Migration
         });
 
         Schema::create('teamswag_appsforx_events', function ($table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('startDate');
             $table->integer('endDate');
-            $table->integer('speaker_id')->unsigned();
-            $table->foreign('speaker_id')->references('id')->on('speakers');
+            $table->integer('teamswag_appsforx_speaker_id')->unsigned();
             $table->timestamps();
         });
     }
