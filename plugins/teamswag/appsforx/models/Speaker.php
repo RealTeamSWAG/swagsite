@@ -16,23 +16,17 @@ class Speaker extends Model
     /**
      * @var array Guarded fields
      */
-    protected $guarded = ['*'];
+    protected $guarded = [''];
 
     /**
      * @var array Fillable fields
      */
     protected $fillable = [];
 
-    /**
-     * @var array Relations
+    /*
+     * Relations
      */
-    public $hasOne = [];
-    public $hasMany = [];
-    public $belongsTo = ['Event'];
-    public $belongsToMany = [];
-    public $morphTo = [];
-    public $morphOne = [];
-    public $morphMany = [];
-    public $attachOne = [];
-    public $attachMany = [];
+    public $belongsTo = [
+        'Event' => ['Teamswag\Appsforx\Models\Event']
+    ];
 }
