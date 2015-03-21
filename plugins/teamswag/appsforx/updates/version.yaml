@@ -1,3 +1,6 @@
 1.0.1:
     - Executing first migrations.
     - create_events_table.php
+1.0.2:
+    - Link speaker and events
+    - link_speaker_event.php

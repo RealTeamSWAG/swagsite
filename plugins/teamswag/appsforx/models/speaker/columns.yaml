@@ -3,6 +3,15 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
-        searchable: true
+
+    name:
+        label: Name
+
+    first_name:
+        label: First name
+
+    event:
+      label: Event
+      relation: Event
+      select: name
+

@@ -30,6 +30,7 @@ class Plugin extends PluginBase
     {
         return [
             'teamswag.appsforx.access_events' => ['tab' => 'Events', 'label' => 'teamswag.appsforx::lang.event.access_events'],
+            'teamswag.appsforx.access_speakers' => ['tab' => 'Speaker', 'label' => 'teamswag.appsforx::lang.event.access_speakers']
         ];
     }
 
@@ -37,6 +38,7 @@ class Plugin extends PluginBase
     {
         return [
             'Teamswag\Appsforx\Components\Events' => 'events',
+            'Teamswag\Appsforx\Components\Speakers' => 'speakers'
         ];
     }
 
@@ -62,6 +64,12 @@ class Plugin extends PluginBase
                         'label'       => 'Events',
                         'icon'        => 'icon-copy',
                         'url'         => Backend::url('teamswag/appsforx/events'),
+                        'permissions' => ['* ']
+                    ],
+                    'speakers' => [
+                        'label'       => 'Speakers',
+                        'icon'        => 'icon-copy',
+                        'url'         => Backend::url('teamswag/appsforx/speakers'),
                         'permissions' => ['* ']
                     ],
                 ]

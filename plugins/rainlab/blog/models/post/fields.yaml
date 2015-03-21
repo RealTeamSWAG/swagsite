@@ -60,7 +60,7 @@ secondaryTabs:
             placeholder: rainlab.blog::lang.post.categories_placeholder
 
         event:
-            tab: event
+            tab: Event
             type: relation
 
         published:
