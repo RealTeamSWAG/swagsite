@@ -7,10 +7,18 @@ fields:
         label: Name
         type: text
 
-    first_name:
-        label: First Name
+    location:
+        label: Location
         type: text
 
-    Session:
-        label: Session
+    startTime:
+        label: Start Time
+        type: datepicker
+
+    endTime:
+        label: End Time
+        type: datepicker
+
+    Event:
+        label: Event
         type: relation

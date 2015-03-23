@@ -11,7 +11,7 @@ class Events extends ComponentBase
     {
         return [
             'name'        => 'Events Component',
-            'description' => 'No description provided yet...'
+            'description' => 'Component to create events'
         ];
     }
 

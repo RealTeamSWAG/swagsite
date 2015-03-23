@@ -10,8 +10,7 @@ columns:
     first_name:
         label: First name
 
-    event:
-      label: Event
-      relation: Event
+    session:
+      label: Session
+      relation: Session
       select: name
-

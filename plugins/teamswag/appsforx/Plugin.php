@@ -20,7 +20,7 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'Appsforx',
-            'description' => 'No description provided yet...',
+            'description' => 'Plugin to create Appsforx events',
             'author'      => 'Teamswag',
             'icon'        => 'icon-leaf'
         ];
@@ -38,15 +38,13 @@ class Plugin extends PluginBase
     {
         return [
             'Teamswag\Appsforx\Components\Events' => 'events',
-            'Teamswag\Appsforx\Components\Speakers' => 'speakers'
+            'Teamswag\Appsforx\Components\Speakers' => 'speakers',
+            'Teamswag\Appsforx\Components\Sessions' => 'sessions'
         ];
     }
 
     public function boot()
     {
-        /*Models\Event::extend(function ($model) {
-            $model->hasMany['speakers'] = ['Teamswag\Appsforx\Models\Speakers'];
-        });*/
     }
 
     public function registerNavigation()
@@ -66,12 +64,18 @@ class Plugin extends PluginBase
                         'url'         => Backend::url('teamswag/appsforx/events'),
                         'permissions' => ['* ']
                     ],
+                    'sessions' => [
+                        'label'       => 'Sessions',
+                        'icon'        => 'icon-copy',
+                        'url'         => Backend::url('teamswag/appsforx/sessions'),
+                        'permissions' => ['* ']
+                    ],
                     'speakers' => [
                         'label'       => 'Speakers',
                         'icon'        => 'icon-copy',
                         'url'         => Backend::url('teamswag/appsforx/speakers'),
                         'permissions' => ['* ']
-                    ],
+                    ]
                 ]
             ]
         ];

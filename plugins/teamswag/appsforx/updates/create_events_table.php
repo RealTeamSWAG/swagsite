@@ -22,7 +22,6 @@ class CreateEventsTable extends Migration
             $table->string('name', 255);
             $table->dateTime('startDate');
             $table->dateTime('endDate');
-            $table->integer('teamswag_appsforx_speaker_id')->unsigned();
             $table->timestamps();
         });
     }

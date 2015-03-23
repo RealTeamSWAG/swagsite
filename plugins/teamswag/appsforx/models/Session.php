@@ -3,38 +3,37 @@
 use Model;
 
 /**
- * Event Model
+ * session Model
  */
-class Event extends Model
+class Session extends Model
 {
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'teamswag_appsforx_events';
-
-    protected $dates = ['startDate', 'endDate'];
+    public $table = 'teamswag_appsforx_sessions';
 
     /**
      * @var array Guarded fields
      */
-    protected $guarded = [''];
+    protected $guarded = ['*'];
 
     /**
      * @var array Fillable fields
      */
-    protected $fillable = ['name'];
+    protected $fillable = [];
 
     /**
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = ['Session' => ['Teamswag\Appsforx\Models\Session']];
-    public $belongsTo = [];
+    public $hasMany = ['Speaker' => ['Teamswag\Appsforx\Models\Speaker']];
+    public $belongsTo = ['Event' => ['Teamswag\Appsforx\Models\Event']];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
+
 }

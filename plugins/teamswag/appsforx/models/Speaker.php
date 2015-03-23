@@ -23,10 +23,16 @@ class Speaker extends Model
      */
     protected $fillable = [];
 
-    /*
-     * Relations
+    /**
+     * @var array Relations
      */
-    public $belongsTo = [
-        'Event' => ['Teamswag\Appsforx\Models\Event']
-    ];
+    public $hasOne = [];
+    public $hasMany = [];
+    public $belongsTo = ['Session' => ["Teamswag\Appsforx\Models\Session"]];
+    public $belongsToMany = [];
+    public $morphTo = [];
+    public $morphOne = [];
+    public $morphMany = [];
+    public $attachOne = [];
+    public $attachMany = [];
 }

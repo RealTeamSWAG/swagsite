@@ -1,0 +1,21 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+      label: Name
+
+    location:
+      label: Location
+
+    startTime:
+      label: Start Time
+
+    endTime:
+      label: End Time
+
+    event:
+      label: Event
+      relation: Event
+      select: name
