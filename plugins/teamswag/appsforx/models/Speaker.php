@@ -7,6 +7,7 @@ use Model;
  */
 class Speaker extends Model
 {
+    use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
@@ -26,13 +27,16 @@ class Speaker extends Model
     /**
      * @var array Relations
      */
-    public $hasOne = [];
-    public $hasMany = [];
     public $belongsTo = ['Session' => ["Teamswag\Appsforx\Models\Session"]];
-    public $belongsToMany = [];
-    public $morphTo = [];
-    public $morphOne = [];
-    public $morphMany = [];
-    public $attachOne = [];
-    public $attachMany = [];
+
+    public $rules = [
+        'name' => 'required',
+        'location' => 'required',
+        'startTime' => 'required',
+        'duration' => 'required|integer',
+    ];
+
+    public $customMessages = [
+        'required' => 'The :attribute field is required'
+    ];
 }

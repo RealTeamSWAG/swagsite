@@ -15,9 +15,9 @@ fields:
         label: Start Time
         type: datepicker
 
-    endTime:
-        label: End Time
-        type: datepicker
+    duration:
+        label: Duration
+        type: text
 
     Event:
         label: Event

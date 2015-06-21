@@ -11,6 +11,6 @@ fields:
         label: First Name
         type: text
 
-    Session:
+    session:
         label: Session
         type: relation

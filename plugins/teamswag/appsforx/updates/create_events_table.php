@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->string('name', 255);
             $table->dateTime('startDate');
             $table->dateTime('endDate');
+            $table->string('description');
             $table->timestamps();
         });
     }

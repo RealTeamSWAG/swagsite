@@ -15,7 +15,8 @@ class CreateSessionsTable extends Migration
             $table->string('name', 255);
             $table->string('location', 255);
             $table->dateTime('startTime');
-            $table->dateTime('endTime');
+            $table->string('duration');
+            $table->string('description');
             $table->integer('event_id')->unsigned();
             $table->timestamps();
         });

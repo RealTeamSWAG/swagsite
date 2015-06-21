@@ -14,3 +14,7 @@ fields:
     endDate:
         label: End date
         type: datepicker
+
+    description:
+        label: Description
+        type: text

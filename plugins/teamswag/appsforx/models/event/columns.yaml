@@ -14,3 +14,7 @@ columns:
     endDate:
         label: End date
         type: date
+
+    description:
+        label: Description
+        type: text

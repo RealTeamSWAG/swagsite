@@ -12,8 +12,8 @@ columns:
     startTime:
       label: Start Time
 
-    endTime:
-      label: End Time
+    duration:
+      label: Duration
 
     event:
       label: Event
