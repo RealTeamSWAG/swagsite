@@ -7,10 +7,15 @@ fields:
         label: Name
         type: text
 
-    first_name:
-        label: First Name
+    twitter:
+        label: Twitter
+        type: text
+        
+    linkedIn:
+        label: LinkedIn
         type: text
 
-    session:
-        label: Session
+    sessions:
+        tab: Sessions
+        label: Sessions
         type: relation

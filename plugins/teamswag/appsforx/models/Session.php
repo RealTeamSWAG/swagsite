@@ -27,13 +27,18 @@ class Session extends Model
     /**
      * @var array Relations
      */
-    public $hasMany = ['Speaker' => ['Teamswag\Appsforx\Models\Speaker']];
     public $belongsTo = ['Event' => ['Teamswag\Appsforx\Models\Event']];
+    public $belongsToMany = [
+        'speakers' => [
+            'Teamswag\Appsforx\Models\Speaker',
+            'table' => 'teamswag_appsforx_se_sp'
+        ]
+    ];
 
     public $rules = [
         'name' => 'required',
         'location' => 'required',
-        'startTime' => 'required',
+        'start_time' => 'required',
         'duration' => 'required|integer',
     ];
 

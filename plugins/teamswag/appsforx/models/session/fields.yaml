@@ -11,14 +11,19 @@ fields:
         label: Location
         type: text
 
-    startTime:
-        label: Start Time
+    start_time:
+        label: Start time
         type: datepicker
 
     duration:
         label: Duration
-        type: text
-
+        type: number
+        
     Event:
         label: Event
         type: relation
+
+    speakers:
+        label: Speakers
+        type: relation
+        nameFrom: name

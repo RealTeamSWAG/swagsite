@@ -7,14 +7,16 @@ fields:
         label: Event name
         type: text
 
-    startDate:
-        label: Start date
-        type: datepicker
-
-    endDate:
-        label: End date
-        type: datepicker
-
     description:
         label: Description
         type: text
+
+    start_date:
+        label: Start date
+        type: datepicker
+        mode: date
+        
+    end_date:
+        label: End date
+        type: datepicker
+        mode: date

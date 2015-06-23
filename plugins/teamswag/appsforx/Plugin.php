@@ -45,6 +45,7 @@ class Plugin extends PluginBase
 
     public function boot()
     {
+        \App::register('Laracasts\Generators\GeneratorsServiceProvider');
     }
 
     public function registerNavigation()

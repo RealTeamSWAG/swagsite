@@ -10,3 +10,6 @@
 1.0.4:
     - Adjust relation session speaker
     - link_session_speaker.php
+1.0.5:
+    - Create pivot table sessions speakers
+    - create_session_speaker_pivot_table.php

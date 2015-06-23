@@ -7,10 +7,13 @@ columns:
     name:
         label: Name
 
-    first_name:
-        label: First name
+    twitter:
+        label: Twitter
 
-    session:
-      label: Session
-      relation: Session
+    linkedIn:
+        label: linkedIn
+
+    sessions:
+      label: Sessions
+      relation: sessions
       select: name

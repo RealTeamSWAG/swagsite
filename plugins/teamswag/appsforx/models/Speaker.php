@@ -27,13 +27,17 @@ class Speaker extends Model
     /**
      * @var array Relations
      */
-    public $belongsTo = ['Session' => ["Teamswag\Appsforx\Models\Session"]];
+    public $belongsToMany = [
+        'sessions' => [
+            'Teamswag\Appsforx\Models\Session',
+            'table' => 'teamswag_appsforx_se_sp'
+        ]
+    ];
 
     public $rules = [
         'name' => 'required',
-        'location' => 'required',
-        'startTime' => 'required',
-        'duration' => 'required|integer',
+        'twitter' => 'required',
+        'linkedIn' => 'required'
     ];
 
     public $customMessages = [

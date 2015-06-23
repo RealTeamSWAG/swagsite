@@ -7,14 +7,12 @@ columns:
         label: Event name
         type: text
 
-    startDate:
-        label: Start date
-        type: date
-
-    endDate:
-        label: End date
-        type: date
-
     description:
         label: Description
         type: text
+        
+    start_date:
+        label: Start Time
+        
+    end_date:
+        label: End Time

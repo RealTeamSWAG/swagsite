@@ -12,7 +12,8 @@ class CreateEventsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 255);
-            $table->string('first_name', 255);
+            $table->string('twitter');
+            $table->string('linkedIn');
             $table->timestamps();
         });
 
@@ -20,8 +21,8 @@ class CreateEventsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 255);
-            $table->dateTime('startDate');
-            $table->dateTime('endDate');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
             $table->string('description');
             $table->timestamps();
         });

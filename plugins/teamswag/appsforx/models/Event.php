@@ -14,8 +14,6 @@ class Event extends Model
      */
     public $table = 'teamswag_appsforx_events';
 
-    protected $dates = ['startDate, endDate'];
-
     /**
      * @var array Guarded fields
      */
@@ -33,9 +31,9 @@ class Event extends Model
 
     public $rules = [
         'name' => 'required',
-        'startDate' => 'required',
-        'endDate' => 'required',
-        'description' => 'required'
+        'description' => 'required',
+        'start_date' => 'required',
+        'end_date' => 'required'
     ];
 
 }
