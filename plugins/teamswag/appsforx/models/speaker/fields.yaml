@@ -1,0 +1,21 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        type: text
+
+    twitter:
+        label: Twitter
+        type: text
+        
+    linkedIn:
+        label: LinkedIn
+        type: text
+
+    sessions:
+        tab: Sessions
+        label: Sessions
+        type: relation

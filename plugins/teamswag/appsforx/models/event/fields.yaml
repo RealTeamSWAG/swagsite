@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Event name
+        type: text
+
+    description:
+        label: Description
+        type: text
+
+    start_date:
+        label: Start date
+        type: datepicker
+        mode: date
+        
+    end_date:
+        label: End date
+        type: datepicker
+        mode: date

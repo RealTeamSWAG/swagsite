@@ -1,0 +1,15 @@
+1.0.1:
+    - Executing first migrations.
+    - create_events_table.php
+1.0.2:
+    - Link speaker and events
+    - link_speaker_event.php
+1.0.3:
+    - Create sessions
+    - create_sessions_table.php
+1.0.4:
+    - Adjust relation session speaker
+    - link_session_speaker.php
+1.0.5:
+    - Create pivot table sessions speakers
+    - create_session_speaker_pivot_table.php
