@@ -1,0 +1,25 @@
+description = "Hero of other pages"
+==
+<header>
+    <nav>
+        <ul id="navbar" class="clearfix">
+            <div id="left">
+                <li><a href="{{ 'home'|page }}"><img src="{{ 'assets/images/logo.png'|theme }}" alt="Logo Open Belgium 2016" /></a></li>
+            </div>
+            <div id="right">
+                <li><a class="nav" id="tickets" href="{{ 'tickets'|page }}">get tickets</a></li>
+            </div>
+            <div class="clearfix" id="center">
+                <li><a class="nav" href="{{ 'programme'|page }}">programme</a></li>
+                <li><a class="nav" href="{{ 'speakers'|page }}">speakers</a></li>
+                <li><a class="nav" href="{{ 'photosAndVideos'|page }}">photos and videos</a></li>
+                <li><a class="nav" href="{{ 'blog'|page }}">blog</a></li>
+                <li><a class="nav" href="{{ 'about'|page }}">about</a></li>
+            </div>
+        </ul>
+    </nav>
+</header>
+
+<div id="title">
+    <h2>{{ this.page.meta_title }}</h2>
+</div>

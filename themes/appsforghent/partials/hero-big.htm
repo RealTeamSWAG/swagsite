@@ -1,0 +1,35 @@
+description = "Hero of the homepage"
+==
+<header>
+    <nav>
+        <ul id="navbar" class="clearfix">
+            <div id="left">
+                <li><a href="{{ 'home'|page }}"></a></li>
+            </div>
+            <div id="right">
+                <li><a href="{{ 'tickets'|page }}">get tickets</a></li>
+            </div>
+            <div class="clearfix" id="center">
+                <li><a class="nav" href="{{ 'programme'|page }}">programme</a></li>
+                <li><a class="nav" href="{{ 'speakers'|page }}">speakers</a></li>
+                <li><a class="nav" href="{{ 'photos-and-videos'|page }}">photos and videos</a></li>
+                <li><a class="nav" href="{{ 'blog'|page }}">blog</a></li>
+                <li><a class="nav" href="{{ 'about'|page }}">about</a></li>
+            </div>
+        </ul>
+    </nav>
+</header>
+
+<div id="openBelgium">
+    <img src="{{ 'assets/images/logo.png'|theme }}" alt="Logo Open Belgium 2016" />
+</div>
+
+<p id="time"></p>
+
+<div id="tickets">
+    <a href="{{ 'tickets'|page }}">get tickets</a>
+</div>
+
+<div id="arrow-down">
+    <a href="#"><img src="{{ 'assets/images/arrow.png'|theme }}" alt="Arrow down" /></a>
+</div>

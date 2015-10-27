@@ -1,4 +1,4 @@
-description = "Default layout"
+description = "Bigger hero"
 ==
 <!DOCTYPE html>
 <html>
@@ -16,13 +16,13 @@ description = "Default layout"
         <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     </head>
     <body>
-
-        <div id="hero-small">
-            {% partial "hero-small" %}
+        
+        <div id="hero-big">
+            {% partial "hero-big" %}
         </div>
 
         <!-- Content -->
-        <section class="container">
+        <section class="content">
             {% page %}
         </section>
 
@@ -30,10 +30,14 @@ description = "Default layout"
         <footer id="layout-footer">
             {% partial "footer" %}
         </footer>
-
+        
         <!-- Scripts -->
         <script src="{{ [
-            'assets/javascript/jquery.js'
+            'assets/javascript/jquery.js',
+            'assets/javascript/jquery.countdown.js',
+            'assets/javascript/time.js',
+            'assets/javascript/slide.js',
+            'assets/javascript/header.js'
         ]|theme }}"></script>
     </body>
 </html>
