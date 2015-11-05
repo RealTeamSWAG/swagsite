@@ -1,3 +1,7 @@
-<p>This is the default markup for component Speakers</p>
+{% set speakers = __SELF__.speakers %}
 
-<small>You can delete this file if you want</small>
+<p>Test</p>
+
+{% for speaker in speakers %}
+    <p>{{ speaker.name }}</p>
+{% endfor %}
