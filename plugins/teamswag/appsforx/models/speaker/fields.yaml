@@ -7,12 +7,24 @@ fields:
         label: Name
         type: text
 
+    description:
+        label: Description
+        type: text
+
     twitter:
         label: Twitter
         type: text
-        
+
     linkedIn:
         label: LinkedIn
+        type: text
+
+    function:
+        label: function
+        type: text
+
+    organisation:
+        label: organisation
         type: text
 
     sessions:

@@ -1,10 +1,12 @@
 <?php namespace Teamswag\Appsforx\Components;
 
 use Cms\Classes\ComponentBase;
+use Teamswag\Appsforx\Models\Speaker;
 
 class Speakers extends ComponentBase
 {
-
+    public $speakers;
+    
     public function componentDetails()
     {
         return [
@@ -16,6 +18,11 @@ class Speakers extends ComponentBase
     public function defineProperties()
     {
         return [];
+    }
+
+    public function onRun()
+    {
+        $this->speakers = Speaker::all()->toArray();
     }
 
 }

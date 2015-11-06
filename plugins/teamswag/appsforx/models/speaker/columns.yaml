@@ -7,11 +7,20 @@ columns:
     name:
         label: Name
 
+    description:
+        label: Description
+
     twitter:
         label: Twitter
 
     linkedIn:
         label: linkedIn
+
+    function:
+        label: function
+
+    organisation:
+        label: organisation
 
     sessions:
       label: Sessions

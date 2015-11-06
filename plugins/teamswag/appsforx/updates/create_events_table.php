@@ -12,8 +12,11 @@ class CreateEventsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 255);
+            $table->string('description', 350)->nullable();
             $table->string('twitter');
             $table->string('linkedIn');
+            $table->string('function')->nullable();
+            $table->string('organisation')->nullable();
             $table->timestamps();
         });
 
