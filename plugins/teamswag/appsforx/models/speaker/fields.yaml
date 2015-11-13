@@ -7,6 +7,10 @@ fields:
         label: Name
         type: text
 
+    priority:
+        label: Priority
+        type: number
+
     description:
         label: Description
         type: text

@@ -11,6 +11,7 @@ class CreateEventsTable extends Migration
         Schema::create('teamswag_appsforx_speakers', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->integer('priority');
             $table->string('name', 255);
             $table->string('description', 350)->nullable();
             $table->string('twitter');

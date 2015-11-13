@@ -16,3 +16,6 @@
 1.0.6:
     - Added description and function and organisation to the speakers table
     - create_events_table.php
+1.0.6:
+    - Added priority to the speakers table
+    - create_events_table.php

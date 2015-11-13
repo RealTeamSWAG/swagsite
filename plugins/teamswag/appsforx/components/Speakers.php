@@ -24,5 +24,4 @@ class Speakers extends ComponentBase
     {
         $this->speakers = Speaker::all()->toArray();
     }
-
 }

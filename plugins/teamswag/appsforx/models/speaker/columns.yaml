@@ -7,6 +7,9 @@ columns:
     name:
         label: Name
 
+    priority:
+        label: Priority
+
     description:
         label: Description
 
