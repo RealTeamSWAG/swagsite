@@ -1,0 +1,37 @@
+description = "blogpost layout"
+==
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>October CMS - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="Stan Callewaert">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/logo.png'|theme }}" />
+        <link href="{{ [
+            'assets/css/styles.css'
+        ]|theme }}" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+        <div id="hero-small">
+            {% partial "hero-small" %}
+        </div>
+
+        <!-- Content -->
+        {% page %}
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial "footer" %}
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ [
+            'assets/javascript/jquery.js',
+            'assets/javascript/header.js'
+        ]|theme }}"></script>
+    </body>
+</html>
