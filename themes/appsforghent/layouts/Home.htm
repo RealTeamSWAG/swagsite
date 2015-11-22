@@ -31,13 +31,16 @@ description = "Bigger hero"
             {% partial "footer" %}
         </footer>
         
+        {% partial "hamburger-menu" %}
+        
         <!-- Scripts -->
         <script src="{{ [
             'assets/javascript/jquery.js',
             'assets/javascript/jquery.countdown.js',
             'assets/javascript/time.js',
             'assets/javascript/slide.js',
-            'assets/javascript/headerHome.js'
+            'assets/javascript/headerHome.js',
+            'assets/javascript/hamburgerMenu.js'
         ]|theme }}"></script>
     </body>
 </html>

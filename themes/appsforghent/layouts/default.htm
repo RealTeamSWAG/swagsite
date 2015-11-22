@@ -30,11 +30,14 @@ description = "Default layout"
         <footer id="layout-footer">
             {% partial "footer" %}
         </footer>
+        
+        {% partial "hamburger-menu" %}
 
         <!-- Scripts -->
         <script src="{{ [
             'assets/javascript/jquery.js',
-            'assets/javascript/header.js'
+            'assets/javascript/header.js',
+            'assets/javascript/hamburgerMenu.js'
         ]|theme }}"></script>
     </body>
 </html>
