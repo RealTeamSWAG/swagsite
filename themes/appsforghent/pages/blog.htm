@@ -5,10 +5,21 @@ is_hidden = 0
 meta_title = "blog"
 ==
 <div id="blog-container">
+    <div id="categories">
+        <ul>
+            <li><a href="">Data</a></li>
+            <li><a href="">Events</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+        </ul>
+    </div>
+
     <h3 class="blog">Latest</h3>
     <div id="latest">
-        <a class="overlay" href="{{ 'blogpost'|page }}"></a>
-        <img src="{{ 'assets/images/blog.png'|theme }}" alt="blogpost">
+        <div>
+            <a class="overlay" href="{{ 'blogpost'|page }}"></a>
+            <img src="{{ 'assets/images/blog.png'|theme }}" alt="blogpost">
+        </div>
         <div id="overlay">
             <p class="theme">Data</p>
             <h4 class="blogpost-title">Open data &amp; biodiversity research</h4>
@@ -18,8 +29,6 @@ meta_title = "blog"
     
     <div id="otherBlogposts">
         <div class="category">
-            <h3 class="blog">Categories</h3>
-            
             <div class="clearfix">
                 <div class="blogpost">
                     <div class="blogpost-image">
