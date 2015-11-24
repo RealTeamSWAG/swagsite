@@ -1,6 +1,52 @@
 {% set posts = __SELF__.posts %}
+<div id="blog-container">
+    <div id="categories">
+        <ul>
+            <li><a href="">Data</a></li>
+            <li><a href="">Events</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+        </ul>
+    </div>
 
-<ul class="post-list">
+    <h3 class="blog">Latest</h3>
+    <div id="latest">
+        <div>
+            <a class="overlay" href="{{ posts[0].url }}"></a>
+            <img src="{{ 'assets/images/blog.png'|theme }}" alt="blogpost">
+        </div>
+        <div id="overlay">
+            <p class="theme">
+                {% for category in posts[0].categories %}
+                    {{ category.name }}
+                {% endfor %}
+            </p>
+            <h4 class="blogpost-title">{{ posts[0].title }}</h4>
+            <p class="by">By <span>Random</span></p>
+        </div>
+    </div>
+    
+    <div id="otherBlogposts">
+        <div class="category">
+            <div class="clearfix">
+                {% for id, post in posts %}
+                    {% if id != 0 %}
+                        <div class="blogpost">
+                            <div class="blogpost-image">
+                                <a class="overlay" href="{{ post.url }}"></a>
+                                <img src="{{ 'assets/images/blog.png'|theme }}" alt="blogpost">
+                            </div>
+                            <h4 class="blogpost-title">{{ post.title }}</h4>
+                            <p class="by">By <span>Random</span></p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<ul class="post-list">
     {% for post in posts %}
         <li>
             <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
@@ -23,7 +69,7 @@
     {% else %}
         <li class="no-data">{{ noPostsMessage }}</li>
     {% endfor %}
-</ul>
+</ul>-->
 
 {% if posts.lastPage > 1 %}
     <ul class="pagination">
