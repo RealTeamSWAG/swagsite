@@ -22,6 +22,6 @@ class Speakers extends ComponentBase
 
     public function onRun()
     {
-        $this->speakers = Speaker::all()->toArray();
+        $this->speakers = Speaker::orderBy('priority', 'ASC')->get();
     }
 }
