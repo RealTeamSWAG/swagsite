@@ -3,8 +3,17 @@ url = "/blog"
 layout = "default"
 is_hidden = 0
 meta_title = "blog"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
 ==
-<div id="blog-container">
+{% component 'blogPosts' %}
+<!--<div id="blog-container">
     <div id="categories">
         <ul>
             <li><a href="">Data</a></li>
@@ -68,4 +77,4 @@ meta_title = "blog"
             </div>
         </div>
     </div>
-</div>
+</div>-->
