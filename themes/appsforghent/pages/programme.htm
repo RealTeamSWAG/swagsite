@@ -3,8 +3,11 @@ url = "/programme"
 layout = "default"
 is_hidden = 0
 meta_title = "programme"
+
+[sessions]
 ==
-<div class="timetable"></div>
+{% component 'sessions' %}
+<!--<div class="timetable"></div>
     
 <script src="{{ 'assets/javascript/timetable.min.js'|theme }}"></script>
 
@@ -25,4 +28,4 @@ meta_title = "programme"
 
   var renderer = new Timetable.Renderer(timetable);
   renderer.draw('.timetable');
-</script>
+</script>-->

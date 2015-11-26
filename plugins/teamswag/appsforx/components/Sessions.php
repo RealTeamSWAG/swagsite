@@ -6,6 +6,7 @@ use Teamswag\Appsforx\Models\Session;
 class Sessions extends ComponentBase
 {
     public $sessions;
+    public $locationsBuilder;
 
     public function componentDetails()
     {
@@ -24,10 +25,14 @@ class Sessions extends ComponentBase
     {
         $this->sessions = Session::all()->toArray();
 
-        $locationsBuilder = "";
+        $this->locationsBuilder = "";
 
-        for($i = 0; $i < $sessions.count(); $i++) {
-            $locationsBuilder += "," + $sessions[i]->location;
+        for($i = 0; $i < count($this->sessions); $i++) {
+            if($i == 0) {
+                $this->locationsBuilder += "'" + $this->sessions[$i]['location'] + "'";
+            } else {
+                $this->locationsBuilder += ", '" + $this->sessions[$i]['location'] + "'";
+            }
         }
     }
 }
