@@ -4,7 +4,7 @@ description = "Bigger hero"
 <html>
     <head>
         <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>Open Belgium - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="Stan Callewaert">
@@ -14,6 +14,17 @@ description = "Bigger hero"
             'assets/css/styles.css'
         ]|theme }}" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <meta property="og:title" content="Open Belgium - {{ this.page.title }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ url_full() }}" />
+        <meta property="og:image" content="" />
+        <meta property="og:description" content="{{ this.page.meta_description }}" />
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@OpenBelgium">
+        <meta name="twitter:title" content="Open Belgium - {{ this.page.title }}">
+        <meta name="twitter:description" content="{{ this.page.meta_description }}">
+        <meta name="twitter:image" content="" />
+        <meta name="twitter:url" content="{{ url_full() }}" />
     </head>
     <body>
         
