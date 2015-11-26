@@ -16,7 +16,7 @@
         <div>
             <a class="overlay" href="{{ 'blogpost'|page }}?id={{ posts[0].id }}"></a>
             {% if posts[0].featured_images.count %}
-                        <img
+            <img
                             data-src="{{ posts[0].featured_images[0].filename }}"
                             src="{{ posts[0].featured_images[0].path }}"
                             alt="{{ posts[0].featured_images[0].description }}"
@@ -45,15 +45,10 @@
                     {% if id != 0 %}
                         <div class="blogpost">
                             <div class="blogpost-image">
-                                <a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}"></a>
                                     {% if post.featured_images.count %}
-                                        <img
-                            data-src="{{ post.featured_images[0].filename }}"
-                            src="{{ post.featured_images[0].path }}"
-                            alt="{{ post.featured_images[0].description }}"
-                            style="max-width: 100%" />
-                                    {% else %}
-                                        <img src="{{ 'assets/images/blog.png'|theme }}" alt="blogpost">
+<a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
+                                    {% else %}     
+<a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
                                     {% endif %}
                             </div>
                             <h4 class="blogpost-title">{{ post.title }}</h4>
@@ -71,15 +66,10 @@
                     {% for id, post in posts %}
                         <div class="blogpost">
                             <div class="blogpost-image">
-                                <a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}"></a>
                                     {% if post.featured_images.count %}
-                                        <img
-                            data-src="{{ post.featured_images[0].filename }}"
-                            src="{{ post.featured_images[0].path }}"
-                            alt="{{ post.featured_images[0].description }}"
-                            style="max-width: 100%" />
-                                    {% else %}
-                                        <img src="{{ 'assets/images/blog.png'|theme }}" alt="blogpost">
+<a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
+                                    {% else %}     
+<a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
                                     {% endif %}
                             </div>
                             <h4 class="blogpost-title">{{ post.title }}</h4>
