@@ -1,5 +1,6 @@
 {% set posts = __SELF__.posts %}
 <div id="blog-container">
+    <!--
     <div id="categories">
         <ul>
             <li><a href="">Data</a></li>
@@ -7,25 +8,36 @@
             <li><a href="">Category</a></li>
             <li><a href="">Category</a></li>
         </ul>
-    </div>
+    </div>  -->
 
+    {% if posts.currentPage == 1 %}
     <h3 class="blog">Latest</h3>
     <div id="latest">
         <div>
             <a class="overlay" href="{{ 'blogpost'|page }}?id={{ posts[0].id }}"></a>
+            {% if posts[0].featured_images.count %}
+                        <img
+                            data-src="{{ posts[0].featured_images[0].filename }}"
+                            src="{{ posts[0].featured_images[0].path }}"
+                            alt="{{ posts[0].featured_images[0].description }}"
+                            style="max-width: 100%" />
+            {% else %}
             <img src="{{ 'assets/images/blog.png'|theme }}" alt="blogpost">
+            {% endif %}
         </div>
         <div id="overlay">
             <p class="theme">
                 {% for category in posts[0].categories %}
-                    {{ category.name }}
+                    {{ category.name }} 
                 {% endfor %}
             </p>
             <h4 class="blogpost-title">{{ posts[0].title }}</h4>
-            <p class="by">By <span>Random</span></p>
+            <p class="by">By <span>{{ posts[0].author }}</span></p>
         </div>
     </div>
+    {% endif %}
     
+    {% if posts.currentPage == 1 %}
     <div id="otherBlogposts">
         <div class="category">
             <div class="clearfix">
@@ -34,16 +46,50 @@
                         <div class="blogpost">
                             <div class="blogpost-image">
                                 <a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}"></a>
-                                <img src="{{ 'assets/images/blog.png'|theme }}" alt="blogpost">
+                                    {% if post.featured_images.count %}
+                                        <img
+                            data-src="{{ post.featured_images[0].filename }}"
+                            src="{{ post.featured_images[0].path }}"
+                            alt="{{ post.featured_images[0].description }}"
+                            style="max-width: 100%" />
+                                    {% else %}
+                                        <img src="{{ 'assets/images/blog.png'|theme }}" alt="blogpost">
+                                    {% endif %}
                             </div>
                             <h4 class="blogpost-title">{{ post.title }}</h4>
-                            <p class="by">By <span>Random</span></p>
+                            <p class="by">By <span>{{ post.author }}</span></p>
                         </div>
                     {% endif %}
                 {% endfor %}
             </div>
         </div>
     </div>
+    {% else %}
+    <div id="otherBlogposts-no-latest">
+        <div class="category">
+            <div class="clearfix">
+                    {% for id, post in posts %}
+                        <div class="blogpost">
+                            <div class="blogpost-image">
+                                <a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}"></a>
+                                    {% if post.featured_images.count %}
+                                        <img
+                            data-src="{{ post.featured_images[0].filename }}"
+                            src="{{ post.featured_images[0].path }}"
+                            alt="{{ post.featured_images[0].description }}"
+                            style="max-width: 100%" />
+                                    {% else %}
+                                        <img src="{{ 'assets/images/blog.png'|theme }}" alt="blogpost">
+                                    {% endif %}
+                            </div>
+                            <h4 class="blogpost-title">{{ post.title }}</h4>
+                            <p class="by">By <span>{{ post.author }}</span></p>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
 </div>
 
 <!--<ul class="post-list">
