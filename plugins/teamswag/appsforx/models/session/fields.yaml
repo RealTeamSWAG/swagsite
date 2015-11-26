@@ -23,6 +23,22 @@ fields:
       label: Description
       type: text
 
+    niveau:
+      label: Niveau
+      type: dropdown
+          #Beginner: Beginner
+          #Intermediate: Intermediate
+          #Advanced: Advanced
+          #Expert: Expert
+
+    type:
+      label: Type
+      type: dropdown
+          #Workshop: Workshop
+          #Panel: Panel
+          #Keynote: Keynote
+          #Hackathon: Hackathon
+
     Event:
         label: Event
         type: relation

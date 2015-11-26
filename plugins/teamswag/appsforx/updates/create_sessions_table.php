@@ -17,6 +17,8 @@ class CreateSessionsTable extends Migration
             $table->dateTime('start_time');
             $table->string('duration');
             $table->string('description');
+            $table->enum('niveau', ['Beginner', 'Intermediate', 'Advanced', 'Expert']);
+            $table->enum('type', ['Workshop', 'Panel', 'Keynote', 'Hackathon']);
             $table->string('twitter');
             $table->string('linkedIn');
             $table->integer('event_id')->unsigned();
@@ -28,5 +30,4 @@ class CreateSessionsTable extends Migration
     {
         Schema::dropIfExists('teamswag_appsforx_sessions');
     }
-
 }

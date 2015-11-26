@@ -18,6 +18,14 @@ columns:
     description:
       label: Description
 
+    niveau:
+      label: Niveau
+      select: niveau
+
+    type:
+      label: Type
+      select: type
+
     event:
       label: Event
       relation: Event

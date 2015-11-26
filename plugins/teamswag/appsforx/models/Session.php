@@ -45,4 +45,14 @@ class Session extends Model
     public $customMessages = [
         'required' => 'The :attribute field is required'
     ];
+
+    public function getNiveauOptions($keyValue = null)
+    {
+        return ['Beginner'=> 'Beginner', 'Intermediate'=> 'Intermediate', 'Advanced'=> 'Advanced', 'Expert'=> 'Expert'];
+    }
+
+    public function getTypeOptions($keyValue = null)
+    {
+        return ['Workshop'=> 'Workshop', 'Panel'=> 'Panel', 'Keynote'=> 'Keynote', 'Hackathon'=> 'Hackathon'];
+    }
 }
