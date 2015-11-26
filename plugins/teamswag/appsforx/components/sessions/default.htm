@@ -8,12 +8,12 @@
 <script>
   var timetable = new Timetable();
 
-  timetable.setScope(8,20)
+  timetable.setScope(8,19)
 
-  timetable.addLocations(['Zaal 1', 'Zaal 2', 'Zaal 3']);
+  timetable.addLocations([{{ locationsBuilder|raw }}]);
 
   {% for session in sessions %}
-    timetable.addEvent('{{ session.name }}', '{{ session.location }}', new Date('{{ session.start_time }}'), new Date('2016-02-29 16:00:00'), '#');
+    timetable.addEvent('{{ session.name }}', '{{ session.location }}', new Date('{{ session.start_time }}'), new Date('{{ session.end_time }}'), "{{ url() }}/event?id={{ session.id }}");
   {% endfor %}
 
   var renderer = new Timetable.Renderer(timetable);

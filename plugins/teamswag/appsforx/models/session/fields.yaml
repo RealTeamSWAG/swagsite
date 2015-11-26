@@ -18,7 +18,11 @@ fields:
     duration:
         label: Duration
         type: number
-        
+
+    description:
+      label: Description
+      type: text
+
     Event:
         label: Event
         type: relation

@@ -1,0 +1,49 @@
+{% set event = __SELF__.event %}
+
+<div id="event" class="clearfix">
+    <ul>
+        <li>{{ event.start }}-{{ event.end }}</li>
+        <li>{{ event.location }}</li>
+        <li>Beginner</li>
+        <li>Workshop</li>
+    </ul>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula metus quis iaculis bibendum. Cras accumsan tellus sed libero semper lobortis. Quisque ut enim vel ligula lacinia iaculis. Fusce nec scelerisque ligula. Mauris porttitor cursus ante eleifend varius. Vestibulum tincidunt, diam vitae convallis iaculis, lorem dui dapibus nunc, a rhoncus eros est sit amet sapien. In elementum nulla et convallis congue.
+
+        Donec tristique lorem in massa pretium, elementum egestas dui facilisis. Phasellus euismod in mi vitae sollicitudin. Morbi eros eros, ornare at ligula in, convallis ultrices velit. Mauris dolor velit, gravida at fermentum in, aliquam ut dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed pharetra lorem vulputate lorem cursus commodo. Mauris in vestibulum nibh. Maecenas pellentesque venenatis neque, in sollicitudin orci fringilla et. Donec ipsum nulla, ultricies ac quam ut, rutrum porttitor enim. Cras eget magna mauris. Aliquam iaculis, lectus ac dictum tristique, lectus mauris laoreet nisi, quis imperdiet enim odio at eros.
+
+        Mauris felis risus, venenatis quis metus at, vestibulum porttitor tellus. Quisque nisl justo, egestas id efficitur quis, hendrerit et libero. Maecenas egestas arcu non convallis accumsan. Suspendisse sollicitudin interdum faucibus. Maecenas elit lorem, fermentum vitae porta at, ullamcorper in mauris. Pellentesque id lectus vel ex pulvinar hendrerit vel ac enim. Aliquam sollicitudin enim ullamcorper risus ultricies, sit amet aliquam sem dapibus. Morbi maximus cursus neque. Nullam tincidunt massa et massa porta luctus. Pellentesque a nisl massa. Praesent fringilla sapien vitae nulla facilisis luctus. Nunc eleifend id tellus eu ullamcorper.
+
+        Pellentesque id nunc hendrerit libero porttitor scelerisque. Quisque mollis, purus in eleifend eleifend, nunc dui fermentum turpis, eleifend eleifend mi nulla sed nunc. Nullam et enim sit amet nibh eleifend ornare nec vel urna. Praesent pretium ullamcorper cursus. Maecenas pellentesque libero eget risus luctus varius. Pellentesque nec vehicula augue. Quisque pellentesque.
+    </p>
+</div>
+
+<div id="speakers" class="clearfix">
+    <h3 id="speakers-title">Speakers</h3>
+    
+    {% for speaker in event.speakers %}
+        <div class="speaker clearfix">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div class="front" style="background-image: url('themes/appsforghent/assets/images/speakers/{{ speaker.id }}.png')">
+                    </div>
+                    <div class="back">
+                        <div class="text">
+                            <h3>Hello I'm {{ speaker.name }}</h3>
+                            <p>{{ speaker.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="text">
+                    <h3>{{ speaker.name }}</h3>
+                    <p id="function">{{ speaker.function }}</p>
+                    <p id="company">{{ speaker.organisation }}</p>
+                </div>
+                <a href="{{ speaker.twitter }}"><img id="twitter" src="{{ 'assets/images/transparant.png'|theme }}" alt="twitter {{ speaker.name }}"></a>
+                <a href="{{ speaker.linkedIn }}"><img id="linkedin" src="{{ 'assets/images/transparant.png'|theme }}" alt="linkedin {{ speaker.name }}"></a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
