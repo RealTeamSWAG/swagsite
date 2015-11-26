@@ -9,7 +9,7 @@
         {% endif %}
     </p>
     <h3 id="blogpost-title">{{ post.title|raw }}</h3>
-    <p id="blogpost-by">By <span>blablabla</span> on {{ post.published_at|date('M d, Y') }}</p>
+    <p id="blogpost-by">By <span>{{ post.author }}</span> on {{ post.published_at|date('M d, Y') }}</p>
 </div>
 
 <div class="clearfix">

@@ -79,8 +79,7 @@
 
         {% for page in 1..posts.lastPage %}
             <li class="{{ posts.currentPage == page ? 'active' : null }}">
-                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-            </li>
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a></li>
         {% endfor %}
 
         {% if posts.lastPage > posts.currentPage %}

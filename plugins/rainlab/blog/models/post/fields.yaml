@@ -16,6 +16,11 @@ fields:
         preset:
             field: title
             type: slug
+            
+    author:
+        label: Author
+        span: left
+        placeholder: Author
 
     toolbar:
         type: partial
@@ -82,6 +87,7 @@ secondaryTabs:
             label: rainlab.blog::lang.post.excerpt
             type: textarea
             size: small
+            
 
         # visibility:
         #   tab: Manage

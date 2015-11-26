@@ -7,6 +7,10 @@ columns:
   title:
     label: rainlab.blog::lang.post.title
     searchable: true
+      
+  author:
+    label: Author
+    searchable: true
 
   # author:
   #   label: Author
