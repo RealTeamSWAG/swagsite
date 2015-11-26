@@ -15,6 +15,9 @@ columns:
     duration:
       label: Duration
 
+    description:
+      label: Description
+
     event:
       label: Event
       relation: Event

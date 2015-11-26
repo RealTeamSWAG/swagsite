@@ -39,7 +39,8 @@ class Plugin extends PluginBase
         return [
             'Teamswag\Appsforx\Components\Events' => 'events',
             'Teamswag\Appsforx\Components\Speakers' => 'speakers',
-            'Teamswag\Appsforx\Components\Sessions' => 'sessions'
+            'Teamswag\Appsforx\Components\Sessions' => 'sessions',
+            'Teamswag\Appsforx\Components\Event' => 'event'
         ];
     }
 
