@@ -3,7 +3,13 @@ url = "/blogpost"
 layout = "blogpost"
 is_hidden = 0
 meta_title = "Blog"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
 ==
+{% component 'blogPost' %}
+<!--
 <div id="blogpost-detail-info">
     <p id="blogpost-category">Data</p>
     <h3 id="blogpost-title">Open data & biodiversity research</h3>
@@ -31,3 +37,4 @@ meta_title = "Blog"
         <img src="{{ 'assets/images/speakers/1.png'|theme }}" alt="written by" />
     </div>
 </div>
+-->

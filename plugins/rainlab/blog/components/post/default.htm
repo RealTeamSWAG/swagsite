@@ -1,27 +1,47 @@
 {% set post = __SELF__.post %}
 
-<div class="content">{{ post.content_html|raw }}</div>
+<div id="blogpost-detail-info">
+    <p id="blogpost-category">
+        {% if post.categories.count %} in
+            {% for category in post.categories %}
+                {{ category.name }}{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        {% endif %}
+    </p>
+    <h3 id="blogpost-title">{{ post.title|raw }}</h3>
+    <p id="blogpost-by">By <span>blablabla</span> on {{ post.published_at|date('M d, Y') }}</p>
+</div>
 
-{% if post.featured_images.count %}
-    <div class="featured-images text-center">
-        {% for image in post.featured_images %}
-            <p>
-                <img
-                    data-src="{{ image.filename }}"
-                    src="{{ image.path }}"
-                    alt="{{ image.description }}"
-                    style="max-width: 100%" />
-            </p>
-        {% endfor %}
+<div class="clearfix">
+    <div id="social-media">
+        <h3>Share</h3>
+        <a href="#"><img src="{{ 'assets/images/facebook-link.png'|theme }}" alt="facebook" /></a>
+        <a href="#"><img src="{{ 'assets/images/twitter-link.png'|theme }}" alt="twitter" /></a>
     </div>
-{% endif %}
+    
+    <div id="blogpost-detail">
+        {% if post.featured_images.count %}
+            <div class="featured-images text-center">
+                {% for image in post.featured_images %}
+                    <p>
+                        <img
+                            data-src="{{ image.filename }}"
+                            src="{{ image.path }}"
+                            alt="{{ image.description }}"
+                            style="max-width: 100%" />
+                    </p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div id="text">
+            {{ post.content_html|raw }}
+        </div>
+    </div>
+    
+    <div id="author">
+        <h3>Written by</h3>
+        <img src="{{ 'assets/images/speakers/1.png'|theme }}" alt="written by" />
+    </div>
+</div>
 
-<p class="info">
-    Posted
-    {% if post.categories.count %} in
-        {% for category in post.categories %}
-            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-        {% endfor %}
-    {% endif %}
-    on {{ post.published_at|date('M d, Y') }}
-</p>
+
