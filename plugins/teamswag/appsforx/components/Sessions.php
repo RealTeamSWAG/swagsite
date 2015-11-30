@@ -27,13 +27,20 @@ class Sessions extends ComponentBase
         $this->locationsBuilder;
 
         $locations = Session::all()->sortBy('location');
+        $previousLocation = "";
 
         for($i = 0; $i < count($locations); $i++) {
-            if($i == 0) {
-                $this->locationsBuilder .= "'" . $locations[$i]['location'] . "'";
-            } else {
-                $this->locationsBuilder .= ", '" . $locations[$i]['location'] . "'";
+
+            //Check if the previous location is the same as this one, if not add it to the locationBuilder
+            if(strcmp($previousLocation, $locations[$i]['location']) !== 0) {
+                if($i == 0) {
+                    $this->locationsBuilder .= "'" . $locations[$i]['location'] . "'";
+                } else {
+                    $this->locationsBuilder .= ", '" . $locations[$i]['location'] . "'";
+                }
             }
+
+            $previousLocation = $locations[$i]['location'];
         }
 
         foreach($this->sessions as &$session) {
