@@ -4,7 +4,10 @@ description = "Hero of other pages"
     <nav id="navigation-fixed">
         <ul id="navbar" class="clearfix">
             <div id="left">
-                <li><a href="{{ 'home'|page }}"><img src="{{ 'assets/images/logo.png'|theme }}" alt="Logo Open Belgium 2016" /></a></li>
+                <li>
+                    <a id="home" href="{{ 'home'|page }}"><img src="{{ 'assets/images/logo.png'|theme }}" alt="Logo open Belgium 2016"></a>
+                    <a id="homeAlt" href="{{ 'home'|page }}"><img src="{{ 'assets/images/logo-black.png'|theme }}" alt="Logo open Belgium 2016"></a>
+                </li>
             </div>
             <div id="right">
                 <li><a class="nav" href="https://openbelgium16.eventbrite.nl">get tickets</a></li>

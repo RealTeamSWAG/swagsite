@@ -35,12 +35,17 @@
         {% endif %}
         <div id="text">
             {{ post.content_html|raw }}
+            <div class="clearfix"></div>
         </div>
     </div>
     
     <div id="author">
         <h3>Written by</h3>
-        <img src="{{ 'assets/images/speakers/1.png'|theme }}" alt="written by" />
+        {% if post.avatar %}
+            <img src="{{ post.avatar.path }}" alt="written by {{ post.author }}" />
+        {% else %}
+            <img src="{{ 'assets/images/default-avatar.png'|theme }}" alt="written by {{ post.author }}" />
+        {% endif %}
     </div>
 </div>
 

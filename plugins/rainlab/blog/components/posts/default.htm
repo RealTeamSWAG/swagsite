@@ -13,17 +13,14 @@
     {% if posts.currentPage == 1 %}
     <h3 class="blog">Latest</h3>
     <div id="latest">
-        <div>
-            <a class="overlay" href="{{ 'blogpost'|page }}?id={{ posts[0].id }}"></a>
-            {% if posts[0].featured_images.count %}
-            <img
-                            data-src="{{ posts[0].featured_images[0].filename }}"
-                            src="{{ posts[0].featured_images[0].path }}"
-                            alt="{{ posts[0].featured_images[0].description }}"
-                            style="max-width: 100%" />
-            {% else %}
-            <img src="{{ 'assets/images/blog.png'|theme }}" alt="blogpost">
-            {% endif %}
+        <div 
+        {% if posts[0].featured_images.count %}
+            style="background-image: url('{{ posts[0].featured_images[0].path }}')"
+        {% else %}
+            style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"
+        {% endif %}
+        >
+            <a class="overlay" href="{{ 'blogpost' }}/{{ posts[0].slug }}"></a>
         </div>
         <div id="overlay">
             <p class="theme">
@@ -46,9 +43,9 @@
                         <div class="blogpost">
                             <div class="blogpost-image">
                                     {% if post.featured_images.count %}
-<a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
+<a class="overlay" href="{{ 'blogpost' }}/{{ post.slug }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
                                     {% else %}     
-<a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
+<a class="overlay" href="{{ 'blogpost' }}/{{ post.slug }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
                                     {% endif %}
                             </div>
                             <h4 class="blogpost-title">{{ post.title }}</h4>
@@ -67,9 +64,9 @@
                         <div class="blogpost">
                             <div class="blogpost-image">
                                     {% if post.featured_images.count %}
-<a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
+<a class="overlay" href="{{ 'blogpost' }}/{{ post.slug }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
                                     {% else %}     
-<a class="overlay" href="{{ 'blogpost'|page }}?id={{ post.id }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
+<a class="overlay" href="{{ 'blogpost' }}/{{ post.slug }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
                                     {% endif %}
                             </div>
                             <h4 class="blogpost-title">{{ post.title }}</h4>
@@ -81,6 +78,23 @@
     </div>
     {% endif %}
 </div>
+
+{% if posts.lastPage > 1 %}
+    <ul class="pagination">
+        {% if posts.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+            <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a></li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
 
 <!--<ul class="post-list">
     {% for post in posts %}
@@ -106,20 +120,3 @@
         <li class="no-data">{{ noPostsMessage }}</li>
     {% endfor %}
 </ul>-->
-
-{% if posts.lastPage > 1 %}
-    <ul class="pagination">
-        {% if posts.currentPage > 1 %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
-        {% endif %}
-
-        {% for page in 1..posts.lastPage %}
-            <li class="{{ posts.currentPage == page ? 'active' : null }}">
-                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a></li>
-        {% endfor %}
-
-        {% if posts.lastPage > posts.currentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
-        {% endif %}
-    </ul>
-{% endif %}

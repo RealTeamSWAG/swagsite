@@ -114,3 +114,11 @@ secondaryTabs:
             mode: image
             imageWidth: 200
             imageHeight: 200
+
+        avatar:
+            tab: rainlab.blog::lang.post.tab_manage
+            label: 'Avatar'
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200

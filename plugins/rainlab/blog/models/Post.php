@@ -20,7 +20,7 @@ class Post extends Model
      */
     public $rules = [
         'title' => 'required',
-        'slug' => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i'],
+        'slug' => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:rainlab_blog_posts'],
         'content' => 'required',
         'excerpt' => ''
     ];
@@ -62,6 +62,11 @@ class Post extends Model
         'featured_images' => ['System\Models\File', 'order' => 'sort_order'],
         'content_images' => ['System\Models\File']
     ];
+    
+    public $attachOne = [
+        'avatar' => ['System\Models\File', 'order' => 'sort_order'],
+        'content_images' => ['System\Models\File']
+    ]; 
 
     /**
      * @var array The accessors to append to the model's array form.
