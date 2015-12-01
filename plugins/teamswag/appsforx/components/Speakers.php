@@ -24,4 +24,5 @@ class Speakers extends ComponentBase
     {
         $this->speakers = Speaker::orderBy('priority', 'ASC')->get();
     }
+   
 }

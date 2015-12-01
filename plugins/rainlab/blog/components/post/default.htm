@@ -9,7 +9,7 @@
         {% endif %}
     </p>
     <h3 id="blogpost-title">{{ post.title|raw }}</h3>
-    <p id="blogpost-by">By <span>{{ post.author }}</span> on {{ post.published_at|date('M d, Y') }}</p>
+    <p id="blogpost-by">By {{ post.author }} on {{ post.published_at|date('M d, Y') }}</p>
 </div>
 
 <div class="clearfix">
@@ -22,24 +22,22 @@
     <div id="blogpost-detail">
         {% if post.featured_images.count %}
             <div class="featured-images text-center">
-                {% for image in post.featured_images %}
-                    <p>
-                        <img
-                            data-src="{{ image.filename }}"
-                            src="{{ image.path }}"
-                            alt="{{ image.description }}"
-                            style="max-width: 100%" />
-                    </p>
-                {% endfor %}
+                <p>
+                    <img
+                        data-src="{{ post.featured_images[0].filename }}"
+                        src="{{ post.featured_images[0].path }}"
+                        alt="{{ post.featured_images[0].description }}"
+                        />
+                </p>
             </div>
         {% else %}
             <div class="featured-images text-center">
                 <p>
                     <img
-                        data-src="{{ image.filename }}"
-                        src="{{ image.path }}"
-                        alt="{{ image.description }}"
-                        style="max-width: 100%" />
+                        data-src="blog.png"
+                        src="{{ 'assets/images/blog.png'|theme }}"
+                        alt="{{ post.title }}"
+                       />
                 </p>
             </div>
         {% endif %}

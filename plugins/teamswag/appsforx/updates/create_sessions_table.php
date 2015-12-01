@@ -16,7 +16,7 @@ class CreateSessionsTable extends Migration
             $table->string('location', 255);
             $table->dateTime('start_time');
             $table->string('duration');
-            $table->string('description');
+            $table->text('description');
             $table->enum('niveau', ['Beginner', 'Intermediate', 'Advanced', 'Expert']);
             $table->enum('type', ['Workshop', 'Panel', 'Keynote', 'Hackathon']);
             $table->string('twitter');

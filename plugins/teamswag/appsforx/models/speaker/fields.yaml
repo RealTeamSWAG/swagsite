@@ -35,3 +35,10 @@ fields:
         tab: Sessions
         label: Sessions
         type: relation
+        
+    avatar:
+        label: 'Avatar'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200

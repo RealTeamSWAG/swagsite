@@ -33,6 +33,11 @@ class Speaker extends Model
             'table' => 'teamswag_appsforx_se_sp'
         ]
     ];
+    
+    public $attachOne = [
+        'avatar' => ['System\Models\File', 'order' => 'sort_order'],
+        'content_images' => ['System\Models\File']
+    ]; 
 
     public $rules = [
         'name' => 'required',

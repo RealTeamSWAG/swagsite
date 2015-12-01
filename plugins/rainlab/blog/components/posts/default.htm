@@ -23,11 +23,12 @@
             <a class="overlay" href="{{ 'blogpost' }}/{{ posts[0].slug }}"></a>
         </div>
         <div id="overlay">
+            <!--
             <p class="theme">
                 {% for category in posts[0].categories %}
                     {{ category.name }} 
                 {% endfor %}
-            </p>
+            </p> -->
             <h4 class="blogpost-title">{{ posts[0].title }}</h4>
             <p class="by">By <span>{{ posts[0].author }}</span></p>
         </div>
@@ -49,7 +50,7 @@
                                     {% endif %}
                             </div>
                             <h4 class="blogpost-title">{{ post.title }}</h4>
-                            <p class="by">By <span>{{ post.author }}</span></p>
+                            <p class="by">By {{ post.author }}</p>
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -70,7 +71,7 @@
                                     {% endif %}
                             </div>
                             <h4 class="blogpost-title">{{ post.title }}</h4>
-                            <p class="by">By <span>{{ post.author }}</span></p>
+                            <p class="by">By {{ post.author }}</p>
                         </div>
                     {% endfor %}
             </div>
