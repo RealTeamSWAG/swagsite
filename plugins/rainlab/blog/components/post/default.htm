@@ -32,6 +32,16 @@
                     </p>
                 {% endfor %}
             </div>
+        {% else %}
+            <div class="featured-images text-center">
+                <p>
+                    <img
+                        data-src="{{ image.filename }}"
+                        src="{{ image.path }}"
+                        alt="{{ image.description }}"
+                        style="max-width: 100%" />
+                </p>
+            </div>
         {% endif %}
         <div id="text">
             {{ post.content_html|raw }}

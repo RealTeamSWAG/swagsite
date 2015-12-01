@@ -1,4 +1,5 @@
 $(window).load(function() {
+    $('#homeAlt').hide();
     header();
     $(window).scroll(header);
 });
