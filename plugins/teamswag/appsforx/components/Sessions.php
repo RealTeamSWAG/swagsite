@@ -26,7 +26,7 @@ class Sessions extends ComponentBase
         $this->sessions = Session::all()->toArray();
         $this->locationsBuilder;
 
-        $locations = Session::all()->sortBy('location');
+        $locations = Session::orderBy('location')->get();
         $previousLocation = "";
 
         for($i = 0; $i < count($locations); $i++) {
