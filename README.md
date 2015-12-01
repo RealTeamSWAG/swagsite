@@ -2,7 +2,7 @@
 
 ### Step 0: clone repository
 
-After cloning or downloading the repository, you can get started.
+After cloning or downloading the repository, you can get started. 
 
 ### Step 1: Run composer
 
