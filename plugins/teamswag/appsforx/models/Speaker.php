@@ -40,9 +40,7 @@ class Speaker extends Model
     ]; 
 
     public $rules = [
-        'name' => 'required',
-        'twitter' => 'required',
-        'linkedIn' => 'required'
+        'name' => 'required'
     ];
 
     public $customMessages = [

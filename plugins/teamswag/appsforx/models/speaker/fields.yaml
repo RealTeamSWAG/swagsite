@@ -41,7 +41,7 @@ fields:
         tab: Sessions
         label: Sessions
         type: relation
-        
+
     avatar:
         label: 'Avatar'
         type: fileupload
