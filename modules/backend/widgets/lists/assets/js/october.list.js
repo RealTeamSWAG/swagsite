@@ -71,21 +71,25 @@
         }).get();
     }
 
+    ListWidget.prototype.toggleChecked = function(el) {
+        var $checkbox = $('.list-checkbox input[type="checkbox"]', $(el).closest('tr'))
+        $checkbox.prop('checked', !$checkbox.is(':checked')).trigger('change')
+    }
+
     // LIST WIDGET PLUGIN DEFINITION
     // ============================
 
     var old = $.fn.listWidget
 
     $.fn.listWidget = function (option) {
-        var args = arguments,
-            result
+        var args = Array.prototype.slice.call(arguments, 1), result
 
         this.each(function () {
             var $this   = $(this)
             var data    = $this.data('oc.listwidget')
             var options = $.extend({}, ListWidget.DEFAULTS, $this.data(), typeof option == 'object' && option)
             if (!data) $this.data('oc.listwidget', (data = new ListWidget(this, options)))
-            if (typeof option == 'string') result = data[option].call($this)
+            if (typeof option == 'string') result = data[option].apply(data, args)
             if (typeof result != 'undefined') return false
         })
 
@@ -102,9 +106,27 @@
         return this
     }
 
+    // LIST WIDGET HELPERS
+    // =================
+
+    if ($.oc === undefined)
+        $.oc = {}
+
+    $.oc.listToggleChecked = function(el) {
+        $(el)
+            .closest('[data-control="listwidget"]')
+            .listWidget('toggleChecked', el)
+    }
+
+    $.oc.listGetChecked = function(el) {
+        return $(el)
+            .closest('[data-control="listwidget"]')
+            .listWidget('getChecked')
+    }
+
     // LIST WIDGET DATA-API
     // ==============
-    
+
     $(document).render(function(){
         $('[data-control="listwidget"]').listWidget();
     })

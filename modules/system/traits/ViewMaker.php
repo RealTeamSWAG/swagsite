@@ -2,6 +2,7 @@
 
 use File;
 use Lang;
+use Event;
 use Block;
 use SystemException;
 
@@ -50,7 +51,8 @@ trait ViewMaker
     public function makePartial($partial, $params = [], $throwException = true)
     {
         if (!File::isPathSymbol($partial) && realpath($partial) === false) {
-            $partial = '_' . strtolower($partial) . '.htm';
+            $folder = strpos($partial, '/') !== false ? dirname($partial) . '/' : '';
+            $partial = $folder . '_' . strtolower(basename($partial)).'.htm';
         }
 
         $partialPath = $this->getViewPath($partial);
@@ -70,7 +72,8 @@ trait ViewMaker
     /**
      * Loads a view with the name specified. Applies layout if its name is provided by the parent object.
      * The view file must be situated in the views directory, and has the extension "htm".
-     * @param string $view Specifies the view name, without extension. Eg: "index". 
+     * @param string $view Specifies the view name, without extension. Eg: "index".
+     * @return string
      */
     public function makeView($view)
     {
@@ -136,7 +139,8 @@ trait ViewMaker
     public function makeLayoutPartial($partial, $params = [])
     {
         if (!File::isLocalPath($partial) && !File::isPathSymbol($partial)) {
-            $partial = '_' . strtolower($partial);
+            $folder = strpos($partial, '/') !== false ? dirname($partial) . '/' : '';
+            $partial = $folder . '_' . strtolower(basename($partial));
         }
 
         return $this->makeLayout($partial, $params);
@@ -160,7 +164,7 @@ trait ViewMaker
             $viewPath = $this->viewPath;
         }
 
-        $fileName = File::symbolizePath($fileName, $fileName);
+        $fileName = File::symbolizePath($fileName);
 
         if (File::isLocalPath($fileName) || realpath($fileName) !== false) {
             return $fileName;
@@ -171,7 +175,7 @@ trait ViewMaker
         }
 
         foreach ($viewPath as $path) {
-            $_fileName = $path . '/' . $fileName;
+            $_fileName = File::symbolizePath($path) . '/' . $fileName;
             if (File::isFile($_fileName)) {
                 break;
             }
@@ -230,5 +234,21 @@ trait ViewMaker
         $classFile = realpath(dirname(File::fromClass($class)));
         $guessedPath = $classFile ? $classFile . '/' . $classFolder . $suffix : null;
         return ($isPublic) ? File::localToPublic($guessedPath) : $guessedPath;
+    }
+
+    /**
+     * Special event function used for extending within view files
+     * @param string $event Event name
+     * @param array $params Event parameters
+     * @return string
+     */
+    public function fireViewEvent($event, $params = [])
+    {
+        // Add the local object to the first parameter always
+        array_unshift($params, $this);
+
+        if ($result = Event::fire($event, $params)) {
+            return implode(PHP_EOL.PHP_EOL, (array) $result);
+        }
     }
 }

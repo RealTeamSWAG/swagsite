@@ -1,5 +1,7 @@
 <?php namespace Backend\Classes;
 
+use October\Rain\Html\Helper as HtmlHelper;
+
 /**
  * List Columns definition
  * A translation of the list column configuration
@@ -44,6 +46,11 @@ class ListColumn
      * override any $sqlSelect definition.
      */
     public $valueFrom;
+
+    /**
+     * @var string Specifies a default value when value is empty.
+     */
+    public $defaults;
 
     /**
      * @var string Custom SQL for selecting this record display value,
@@ -132,6 +139,9 @@ class ListColumn
         if (isset($config['valueFrom'])) {
             $this->valueFrom = $config['valueFrom'];
         }
+        if (isset($config['default'])) {
+            $this->defaults = $config['default'];
+        }
         if (isset($config['select'])) {
             $this->sqlSelect = $config['select'];
         }
@@ -146,5 +156,32 @@ class ListColumn
         }
 
         return $config;
+    }
+
+    /**
+     * Returns a HTML valid name for the column name.
+     * @return string
+     */
+    public function getName()
+    {
+        return HtmlHelper::nameToId($this->columnName);
+    }
+
+    /**
+     * Returns a value suitable for the column id property.
+     * @param  string $suffix Specify a suffix string
+     * @return string
+     */
+    public function getId($suffix = null)
+    {
+        $id = 'column';
+
+        $id .= '-'.$this->columnName;
+
+        if ($suffix) {
+            $id .= '-'.$suffix;
+        }
+
+        return HtmlHelper::nameToId($id);
     }
 }

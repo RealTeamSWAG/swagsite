@@ -1,26 +1,10 @@
 /*
-=require ../vendor/bootstrap/js/modal.js
-*/
-/*
  * Ajax Popup plugin
  *
- * Options:
- * - content: content HTML string or callback
- * 
- * Data attributes:
- * - data-control="popup" - enables the ajax popup plugin
- * - data-ajax="popup-content.htm" - ajax content to load
- * - data-handler="widget:pluginName" - October ajax request name
- * - data-keyboard="false" - Allow popup to be closed with the keyboard
- * - data-request-data="file_id: 1" - October ajax request data
- * - data-size="large" - Popup size, available sizes: giant, huge, large, small, tiny
+ * Documentation: ../docs/popup.md
  *
- * JavaScript API:
- * $('a#someLink').popup({ ajax: 'popup-content.htm' })
- * $('a#someLink').popup({ handler: 'onOpenPopupForm' })
- *
- * Dependences:
- * - Bootstrap Modal (modal.js)
+ * Require:
+ *  - bootstrap/modal
  */
 
 +function ($) { "use strict";
@@ -61,11 +45,13 @@
             self.triggerEvent('hidden.oc.popup')
             self.$container.remove()
             self.$el.data('oc.popup', null)
+            $(document.body).removeClass('modal-open')
         })
 
         this.$modal.on('show.bs.modal', function(){
             self.isOpen = true
             self.setBackdrop(true)
+            $(document.body).addClass('modal-open')
         })
 
         this.$modal.on('shown.bs.modal', function(){

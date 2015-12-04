@@ -128,6 +128,19 @@
         return true
     }
 
+    /*
+     * This method is called when a cell value in the row changes.
+     */
+    StringProcessor.prototype.onRowValueChanged = function(columnName, cellElement) {
+        if (columnName != this.columnName) {
+            return
+        }
+
+        var value = this.tableObj.getCellValue(cellElement)
+
+        this.setViewContainerValue(cellElement, value)
+    }
+
     StringProcessor.prototype.onFocusTimeout = function() {
         if (!this.activeCell)
             return
@@ -141,7 +154,7 @@
     }
 
     StringProcessor.prototype.getCaretPosition = function(input) {
-        // TODO: refactor to a core library
+        // TODO: use the foundation library
 
         if (document.selection) { 
            var selection = document.selection.createRange()
@@ -157,7 +170,7 @@
     }
 
     StringProcessor.prototype.setCaretPosition = function(input, position) {
-        // TODO: refactor to a core library
+        // TODO: use the foundation library
 
         if (document.selection) { 
             var range = input.createTextRange()

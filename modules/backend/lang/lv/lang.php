@@ -18,6 +18,9 @@ return [
             'label' => 'Piekļuve liegta',
             'help' => "Jums nav piekļuves tiesību, lai skatītu šo lapu.",
             'cms_link' => 'Atgriezties back-end'
+        ],
+        'invalid_token' => [
+            'label' => 'Nederīga drošības atslēga'
         ]
     ],
     'partial' => [
@@ -25,7 +28,7 @@ return [
     ],
     'account' => [
         'sign_out' => 'Izrakstīties',
-        'login' => 'Pierakstīties',
+        'login' => 'Login',
         'reset' => 'Atiestatīt',
         'restore' => 'Atjaunot',
         'login_placeholder' => 'vārds',
@@ -86,6 +89,7 @@ return [
         'password' => 'Parole',
         'password_confirmation' => 'Apstiprināt Paroli',
         'permissions' => 'Tiesības',
+        'account' => 'Konts',
         'superuser' => 'Super Lietotājs',
         'superuser_comment' => 'Atķeksējiet šo aili, lai atļautu šai personai neierobežotu piekļuvi.',
         'send_invite' => 'Nosūtīt uzaicinājumu pa Epastu',
@@ -107,6 +111,7 @@ return [
             'new' => 'Jauna Administrātoru Grupa',
             'delete_confirm' => 'Vai tiešām vēlaties dzēst šo administrātoru grupu?',
             'return' => 'Atgriezties grupu sarakstā',
+            'users_count' => 'Lietotāji'
         ],
         'preferences' => [
             'not_authenticated' => 'Nav autentificēts lietotājs, kuram ielādēt vai saglabāt iestatījumus.'
@@ -139,7 +144,13 @@ return [
         'attachment' => 'Pielikums',
         'help' => 'Pievienojiet virsrakstu un aprakstu šim pielikumam.',
         'title_label' => 'Vrisraksts',
-        'description_label' => 'Apraksts'
+        'description_label' => 'Apraksts',
+        'default_prompt' => 'Uzklikšķiniet uz %s vai nesiet failu šeit',
+        'attachment_url' => 'Pielikuma URL',
+        'upload_file' => 'Augšupielādēt failu',
+        'upload_error' => 'Augšupielādes kļūda',
+        'remove_confirm' => 'Vai esat pārliecināts?',
+        'remove_file' => 'Noņemt failu'
     ],
     'form' => [
         'create_title' => 'Jauns :name',
@@ -168,19 +179,21 @@ return [
         'resetting' => 'Atiestatam',
         'resetting_name' => 'Atiestatam :name',
         'undefined_tab' => 'Izvēles',
-        'field_off' => 'Atspējots',
-        'field_on' => 'Iespējots',
+        'field_off' => 'Izsl.',
+        'field_on' => 'Iesl.',
         'add' => 'Pievienot',
         'apply' => 'Apstiprināt',
         'cancel' => 'Atcelt',
         'close' => 'Aizvērt',
         'confirm' => 'Apstiprināt',
         'reload' => 'Pārlādēt',
+        'complete' => 'Pabeigt',
         'ok' => 'OK',
         'or' => 'vai',
         'confirm_tab_close' => 'Vai tiešām vēlaties aizvērt šo cilni? Nesaglabātās izmaiņas būs zudušas.',
         'behavior_not_ready' => 'Forma nav tikusi inicializēta, pārbaudiet vai izsaucāt initForm() savā kontrolierī.',
         'preview_no_files_message' => 'Faili nav augšupielādēti',
+        'preview_no_record_message' => 'Nav izvēlētu ierakstu.',
         'select' => 'Izvēlēties',
         'select_all' => 'visus',
         'select_none' => 'nevienu',
@@ -223,6 +236,10 @@ return [
         'unlink_name' => "Atsaistīt :name",
         'unlink_confirm' => "Vai esat pārliecināts?",
     ],
+    'reorder' => [
+        'default_title' => 'Pārkārtot ierakstus',
+        'no_records' => 'Nav pieejami ieraksti, ko pārkārtot.',
+    ],
     'model' => [
         'name' => 'Modulis',
         'not_found' => "Modulis ':class' ar ID :id netika atrasts",
@@ -247,6 +264,7 @@ return [
         'code_folding' => 'Koda savilkšana',
         'word_wrap' => 'Vārdu aplaušana',
         'highlight_active_line' => 'Iekrāsot aktīvo līniju',
+        'auto_closing' => 'Automātiski aizvērt birkas un īpašos simbolus',
         'show_invisibles' => 'Rādīt slēptos simbolus',
         'show_gutter' => 'Rādīt līniju numurus',
         'theme' => 'Krāsu shēma'
@@ -299,6 +317,6 @@ return [
         'email' => 'Epasts'
     ],
     'filter' => [
-        'all' => 'visi',
-    ],
+        'all' => 'visi'
+    ]
 ];

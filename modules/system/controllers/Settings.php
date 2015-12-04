@@ -30,11 +30,11 @@ class Settings extends Controller
     {
         parent::__construct();
 
-        if ($this->action == 'mysettings') {
-            $this->requiredPermissions = null;
+        if ($this->action == 'backend_preferences') {
+            $this->requiredPermissions = ['backend.manage_preferences'];
         }
 
-        $this->addCss('/modules/system/assets/css/settings.css', 'core');
+        $this->addCss('/modules/system/assets/css/settings/settings.css', 'core');
 
         BackendMenu::setContext('October.System', 'system', 'settings');
     }
