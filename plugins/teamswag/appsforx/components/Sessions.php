@@ -44,7 +44,8 @@ class Sessions extends ComponentBase
         }
 
         foreach($this->sessions as &$session) {
-            $session['end_time'] = gmdate("Y-m-d H:i:s", strtotime($session['start_time']) + ($session['duration'] * 60));
+            $session['end_time'] = gmdate("F d, Y H:i:s", strtotime($session['start_time']) + ($session['duration'] * 60));
+            $session['start_time'] = gmdate("F d, Y H:i:s", strtotime($session['start_time']));
         }
     }
 }
