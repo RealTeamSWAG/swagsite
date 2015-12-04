@@ -1,6 +1,7 @@
 {% set event = __SELF__.event %}
 
 <div id="event" class="clearfix">
+    <h3 id="event-title">{{ event.name }}</h3>
     <ul>
         <li>Time: {{ event.start }}-{{ event.end }}</li>
         <li>Location: {{ event.location }}</li>
