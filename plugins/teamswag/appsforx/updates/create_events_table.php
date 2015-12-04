@@ -13,7 +13,7 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->integer('priority');
             $table->string('name', 255);
-            $table->string('description', 350)->nullable();
+            $table->string('description', 500)->nullable();
             $table->string('twitter');
             $table->string('linkedIn');
             $table->string('function')->nullable();
