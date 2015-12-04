@@ -20,7 +20,7 @@
             style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"
         {% endif %}
         >
-            <a class="overlay" href="{{ 'blogpost' }}/{{ posts[0].slug }}"></a>
+            <a class="overlay" href="{{ 'blogpost'|page({ slug: posts[0].slug }) }}"></a>
         </div>
         <div id="overlay">
             <!--
@@ -44,9 +44,9 @@
                         <div class="blogpost">
                             <div class="blogpost-image">
                                     {% if post.featured_images.count %}
-<a class="overlay" href="{{ 'blogpost' }}/{{ post.slug }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
+<a class="overlay" href="{{ 'blogpost'|page({ slug: post.slug }) }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
                                     {% else %}     
-<a class="overlay" href="{{ 'blogpost' }}/{{ post.slug }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
+<a class="overlay" href="{{ 'blogpost'|page({ slug: post.slug }) }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
                                     {% endif %}
                             </div>
                             <h4 class="blogpost-title">{{ post.title }}</h4>
@@ -65,9 +65,9 @@
                         <div class="blogpost">
                             <div class="blogpost-image">
                                     {% if post.featured_images.count %}
-<a class="overlay" href="{{ 'blogpost' }}/{{ post.slug }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
+<a class="overlay" href="{{ 'blogpost'|page({ slug: post.slug }) }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
                                     {% else %}     
-<a class="overlay" href="{{ 'blogpost' }}/{{ post.slug }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
+<a class="overlay" href="{{ 'blogpost'|page({ slug: post.slug }) }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
                                     {% endif %}
                             </div>
                             <h4 class="blogpost-title">{{ post.title }}</h4>
@@ -96,28 +96,3 @@
         {% endif %}
     </ul>
 {% endif %}
-
-<!--<ul class="post-list">
-    {% for post in posts %}
-        <li>
-            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-
-            <p class="info">
-                Posted
-                {% if post.categories.count %} in {% endif %}
-                {% for category in post.categories %}
-                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-                {% endfor %}
-                on {{ post.published_at|date('M d, Y') }}
-            </p>
-
-            {% if post.excerpt %}
-                <p class="excerpt">{{ post.excerpt }}</p>
-            {% else %}
-                <div class="content">{{ post.content_html|raw }}</div>
-            {% endif %}
-        </li>
-    {% else %}
-        <li class="no-data">{{ noPostsMessage }}</li>
-    {% endfor %}
-</ul>-->
