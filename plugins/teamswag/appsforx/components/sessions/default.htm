@@ -14,7 +14,7 @@
     timetable.addLocations([{{ locationsBuilder|raw }}]);
   
     {% for session in sessions %}
-      timetable.addEvent('{{ session.name }}', '{{ session.location }}', new Date('{{ session.start_time }}'), new Date('{{ session.end_time }}'), "{{ url() }}/event?id={{ session.id }}");
+      timetable.addEvent('{{ session.name|raw }}', '{{ session.location|raw }}', new Date('{{ session.start_time }}'), new Date('{{ session.end_time }}'), "{{ url() }}/event/{{ session.id }}");
     {% endfor %}
   
     var renderer = new Timetable.Renderer(timetable);
