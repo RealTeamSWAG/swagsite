@@ -5,12 +5,12 @@ use Teamswag\Appsforx\Models\Session;
 
 class Event extends ComponentBase
 {
-    public $event;
+    public $session;
 
     public function componentDetails()
     {
         return [
-            'name'        => 'Event Component',
+            'name'        => 'Session Component',
             'description' => 'No description provided yet...'
         ];
     }
@@ -24,10 +24,9 @@ class Event extends ComponentBase
 
     public function onRun()
     {
-        $pid = $this->param('id');
-        //$pid = $_GET["id"]; 
-        $this->event = Session::where('id', $pid)->first()->load('speakers');
-        $this->event['start'] = gmdate("H\hi", strtotime($this->event['start_time']));
-        $this->event['end'] = gmdate("H\hi", strtotime($this->event['start_time']) + ($this->event['duration'] * 60));
+        $slug = $this->param('slug');
+        $this->session = Session::where('slug', $slug)->first()->load('speakers');
+        $this->session['start'] = gmdate("H\hi", strtotime($this->session['start_time']));
+        $this->session['end'] = gmdate("H\hi", strtotime($this->session['start_time']) + ($this->session['duration'] * 60));
     }
 }

@@ -1,15 +1,15 @@
-{% set event = __SELF__.event %}
+{% set session = __SELF__.session %}
 
 <div id="event" class="clearfix">
-    <h3 id="event-title">{{ event.name }}</h3>
+    <h3 id="event-title">{{ session.name }}</h3>
     <ul>
-        <li>Time: {{ event.start }}-{{ event.end }}</li>
-        <li>Location: {{ event.location }}</li>
-        <li>Level: {{ event.niveau }}</li>
-        <li>Type: {{ event.type }}</li>
+        <li>Time: {{ session.start }}-{{ session.end }}</li>
+        <li>Location: {{ session.location }}</li>
+        <li>Level: {{ session.niveau }}</li>
+        <li>Type: {{ session.type }}</li>
     </ul>
     <p>
-        {{ event.description }}
+        {{ session.description }}
     </p>
 </div>
 
@@ -17,7 +17,7 @@
     <h3 id="speakers-title">Speakers</h3>
     
     <div id="speaker-blocks" class="clearfix">
-        {% for speaker in event.speakers %}
+        {% for speaker in session.speakers %}
             <div class="speaker clearfix">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">

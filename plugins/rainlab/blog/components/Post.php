@@ -55,8 +55,6 @@ class Post extends ComponentBase
 
     protected function loadPost()
     { 
-        //$pid = $_GET["id"]; 
-        //$post = BlogPost::isPublished()->where('id', $pid)->first();
         $slug = $this->property('slug');
         $post = BlogPost::isPublished()->where('slug', $slug)->first();
 

@@ -13,6 +13,7 @@ class CreateSessionsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 255);
+            $table->string('slug');
             $table->string('location', 255);
             $table->dateTime('start_time');
             $table->string('duration');

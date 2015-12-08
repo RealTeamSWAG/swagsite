@@ -6,6 +6,15 @@ fields:
     name:
         label: Name
         type: text
+        span: left
+      
+    slug:
+        label: Slug
+        span: right
+        placeholder: slug
+        preset:
+            field: name
+            type: slug
 
     location:
         label: Location

@@ -40,6 +40,7 @@ class Session extends Model
         'location' => 'required',
         'start_time' => 'required',
         'duration' => 'required|integer',
+        'slug' => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:teamswag_appsforx_sessions'],
     ];
 
     public $customMessages = [
