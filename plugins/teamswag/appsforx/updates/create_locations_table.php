@@ -16,6 +16,12 @@ class CreateLocationsTable extends Migration
             $table->text('description');
             $table->timestamps();
         });
+        
+        Schema::table('teamswag_appsforx_sessions', function($table)
+        {
+            $table->dropColumn('location');
+            $table->integer('location_id')->unsigned();
+        });
     }
 
     public function down()
