@@ -16,7 +16,7 @@
 <div id="speakers" class="clearfix">
     <h3 id="speakers-title">Speakers</h3>
     
-    <div id="speaker-blocks">
+    <div id="speaker-blocks" class="clearfix">
         {% for speaker in event.speakers %}
             <div class="speaker clearfix">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -37,8 +37,13 @@
                         <p id="function">{{ speaker.function }}</p>
                         <p id="company">{{ speaker.organisation }}</p>
                     </div>
-                    <a href="{{ speaker.twitter }}"><img id="twitter" src="{{ 'assets/images/transparant.png'|theme }}" alt="twitter {{ speaker.name }}"></a>
-                    <a href="{{ speaker.linkedIn }}"><img id="linkedin" src="{{ 'assets/images/transparant.png'|theme }}" alt="linkedin {{ speaker.name }}"></a>
+                    {% if speaker.twitter %}
+                        <a href="{{ speaker.twitter }}"><img id="twitter" src="{{ 'assets/images/transparant.png'|theme }}" alt="twitter {{ speaker.name }}"></a>
+                    {% endif %}
+
+                    {% if speaker.linkedIn %}
+                        <a href="{{ speaker.linkedIn }}"><img id="linkedin" src="{{ 'assets/images/transparant.png'|theme }}" alt="linkedin {{ speaker.name }}"></a>
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
