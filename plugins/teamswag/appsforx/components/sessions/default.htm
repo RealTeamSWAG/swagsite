@@ -22,22 +22,23 @@
     ]);
   
     {% for session in sessions %}
-            //{% if session.isGlobal %} als het werkt
+            {% if session.is_global %} 
                 {% for location in locations %}
                     timetable.addEvent('{{ session.name }}', '{{ location.name }}', new Date('{{ session.start_time }}'), new Date('{{ session.end_time }}')
 
                     {% if session.slug %}
                         , "{{ url() }}/session/{{ session.slug }}"
-                    {% endif %}
-
+                    {% endif %}               
                     );
                 {% endfor %}
-            /*{% else %}
-            timetable.addEvent('{{ session.name }}', '{{ session.loc }}', new Date('{{ session.start_time }}'), new Date('{{ session.end_time }}')
-
-            {% if session.slug %}
-                , "{{ url() }}/session/{{ session.slug }}"
-            {% endif %} als het werkt*/
+            {% else %}
+                timetable.addEvent('{{ session.name }}', '{{ session.loc }}', new Date('{{ session.start_time }}'), new Date('{{ session.end_time }}')
+    
+                {% if session.slug %}
+                    , "{{ url() }}/session/{{ session.slug }}"
+                {% endif %} 
+                );
+            {% endif %} 
     {% endfor %}
   
     var renderer = new Timetable.Renderer(timetable);
