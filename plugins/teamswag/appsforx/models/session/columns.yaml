@@ -15,9 +15,6 @@ columns:
     duration:
       label: Duration
 
-    description:
-      label: Description
-
     niveau:
       label: Niveau
       select: niveau

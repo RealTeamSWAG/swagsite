@@ -10,9 +10,6 @@ columns:
     priority:
         label: Priority
 
-    description:
-        label: Description
-
     twitter:
         label: Twitter
 
