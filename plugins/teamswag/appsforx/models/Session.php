@@ -27,7 +27,8 @@ class Session extends Model
     /**
      * @var array Relations
      */
-    public $belongsTo = ['Event' => ['Teamswag\Appsforx\Models\Event']];
+    public $belongsTo = ['Event' => ['Teamswag\Appsforx\Models\Event'], 'Location' => ['Teamswag\Appsforx\Models\Location']];
+
     public $belongsToMany = [
         'speakers' => [
             'Teamswag\Appsforx\Models\Speaker',
@@ -37,7 +38,6 @@ class Session extends Model
 
     public $rules = [
         'name' => 'required',
-        'location' => 'required',
         'start_time' => 'required',
         'duration' => 'required|integer',
         'slug' => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:teamswag_appsforx_sessions'],

@@ -14,7 +14,6 @@ class CreateSessionsTable extends Migration
             $table->increments('id');
             $table->string('name', 255);
             $table->string('slug');
-            $table->string('location', 255);
             $table->dateTime('start_time');
             $table->string('duration');
             $table->text('description');
@@ -23,6 +22,7 @@ class CreateSessionsTable extends Migration
             $table->string('twitter')->nullable();
             $table->string('linkedIn')->nullable();
             $table->integer('event_id')->unsigned();
+            $table->integer('location_id')->unsigned();
             $table->timestamps();
         });
     }

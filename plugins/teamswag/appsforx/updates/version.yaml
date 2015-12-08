@@ -16,3 +16,6 @@
 1.0.8:
     - Update speakers
     - update_speakers_table.php
+1.0.9:
+    - Add locations
+    - create_locations_table.php

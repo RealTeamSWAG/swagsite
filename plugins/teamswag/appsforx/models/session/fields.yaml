@@ -15,10 +15,10 @@ fields:
         preset:
             field: name
             type: slug
-
-    location:
+            
+    Location:
         label: Location
-        type: text
+        type: relation
 
     start_time:
         label: Start time
@@ -62,3 +62,5 @@ fields:
         label: Speakers
         type: relation
         nameFrom: name
+        
+

@@ -77,6 +77,12 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-copy',
                         'url'         => Backend::url('teamswag/appsforx/speakers'),
                         'permissions' => ['* ']
+                    ],
+                    'locations' => [
+                        'label'       => 'Locations',
+                        'icon'        => 'icon-copy',
+                        'url'         => Backend::url('teamswag/appsforx/locations'),
+                        'permissions' => ['* ']
                     ]
                 ]
             ]

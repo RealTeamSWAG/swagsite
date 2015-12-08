@@ -15,9 +15,9 @@
 <div class="clearfix">
     <div id="social-media">
         <h3>Share</h3>
-        <a href="http://www.facebook.com/sharer.php?u={{ url_full() }}" target="_blank"><img src="{{ 'assets/images/facebook-link.png'|theme }}" alt="facebook" /></a>
--        <a href="https://twitter.com/share?url={{ url_full() }}"><img src="{{ 'assets/images/twitter-link.png'|theme }}" alt="twitter" /></a>
-        <!--<a id="facebook-share" href=""><img src="{{ 'assets/images/facebook-link.png'|theme }}" alt="facebook" /></a>
+        <a onclick="shareFb()"><img src="{{ 'assets/images/facebook-link.png'|theme }}" alt="facebook" /></a>
+        <a href="https://twitter.com/share?url={{ url_full() }}"><img src="{{ 'assets/images/twitter-link.png'|theme }}" alt="twitter" /></a> 
+        <!-- <a id="facebook-share" href=""><img src="{{ 'assets/images/facebook-link.png'|theme }}" alt="facebook" /></a>
         <a "twitter-share" href="https://twitter.com/share?url={{ url_full() }}"><img src="{{ 'assets/images/twitter-link.png'|theme }}" alt="twitter" /></a>-->
     </div>
     
@@ -59,4 +59,27 @@
     </div>
 </div>
 
+<script>    
+    document.addEventListener("DOMContentLoaded", function() {
+        $.ajaxSetup({ cache: true });
+        $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+            FB.init({
+            appId: '975217692558021',
+            version: 'v2.5' // or v2.0, v2.1, v2.2, v2.3
+            });    
+            
 
+        });
+        
+        shareFb = function() {
+            FB.ui({
+                method: 'feed',
+                display: 'popup',
+                picture: '{{ url() }}{{ post.featured_images[0].path }}',
+                link: '{{ url_full() }}',
+                caption: '{{ post.title|raw }}',
+            }, function(response){}); 
+        }
+    
+    });
+</script>

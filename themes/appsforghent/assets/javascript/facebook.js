@@ -1,4 +1,5 @@
 var fb = function (LandId) {
+  
    var url = window.location.href;
    var facebookImage = $('#facebook-share').html();
 
@@ -13,5 +14,5 @@ var fb = function (LandId) {
 }
 
 $(window).load(function() {
-   fb();
+   //fb();
 });

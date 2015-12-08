@@ -6,8 +6,10 @@ columns:
     name:
       label: Name
 
-    location:
+    Location:
       label: Location
+      relation: Location
+      select: name
 
     start_time:
       label: Start Time
@@ -27,7 +29,7 @@ columns:
       label: Event
       relation: Event
       select: name
-
+     
     speakers:
       label: Speakers
       relation: speakers
