@@ -13,3 +13,6 @@
 1.0.9:
     - Add locations
     - create_locations_table.php
+1.0.11:
+    - Add slug
+    - create_slug_column.php
