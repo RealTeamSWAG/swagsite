@@ -18,11 +18,10 @@ class CreateSessionsTable extends Migration
             $table->text('description');
             $table->enum('niveau', ['Beginner', 'Intermediate', 'Advanced', 'Expert']);
             $table->enum('type', ['Workshop', 'Panel', 'Keynote', 'Hackathon']);
-            $table->string('twitter')->nullable();
-            $table->string('linkedIn')->nullable();
-            $table->integer('event_id')->unsigned();
             $table->integer('location_id')->unsigned();
+            $table->integer('event_id')->unsigned();
             $table->timestamps();
+            $table->string('slug')->nullable();
         });
     }
 

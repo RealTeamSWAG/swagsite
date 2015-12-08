@@ -3,18 +3,20 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class UpdateNullableSlug extends Migration
+class UpdateSessionsTable extends Migration
 {
 
     public function up()
     {
         Schema::table('teamswag_appsforx_sessions', function($table)
         {
-            $table->string('slug')->nullable()->change();
+            $table->string('color')->nullable()->add();
+            $table->string('is_global')->add();
         });
     }
 
     public function down()
     {
+
     }
 }

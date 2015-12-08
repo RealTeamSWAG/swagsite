@@ -19,6 +19,15 @@ fields:
     Location:
         label: Location
         type: relation
+        span: left
+        
+    is_global:
+        label: Global session (will appear in all locations)
+        type: checkbox
+        default: false
+        
+    color:
+        type: colorpicker
 
     start_time:
         label: Start time
