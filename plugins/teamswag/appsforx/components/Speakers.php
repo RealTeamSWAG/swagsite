@@ -3,10 +3,11 @@
 use Cms\Classes\ComponentBase;
 use Teamswag\Appsforx\Models\Speaker;
 
+
 class Speakers extends ComponentBase
 {
     public $speakers;
-    
+
     public function componentDetails()
     {
         return [

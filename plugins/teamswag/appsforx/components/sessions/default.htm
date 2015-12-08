@@ -1,5 +1,5 @@
 {% set sessions = __SELF__.sessions %}
-{% set locationsBuilder = __SELF__.locationsBuilder %}
+{% set locations = __SELF__.locations %}
 
 <div class="timetable"></div>
     
@@ -11,17 +11,34 @@
   
     timetable.setScope(8,19)
   
-    timetable.addLocations([{{ locationsBuilder|raw }}]);
+    timetable.addLocations([
+        {% for location in locations %}
+            {% if loop.index == locations.count %}
+                '{{ location.name }}'
+            {% else %}
+                '{{ location.name }}',
+            {% endif %}
+        {% endfor %}
+    ]);
   
     {% for session in sessions %}
-        
-        timetable.addEvent('{{ session.name }}', '{{ session.loc }}', new Date('{{ session.start_time }}'), new Date('{{ session.end_time }}')
+            {% if session.is_global %} 
+                {% for location in locations %}
+                    timetable.addEvent('{{ session.name }}', '{{ location.name }}', new Date('{{ session.start_time }}'), new Date('{{ session.end_time }}')
 
-            {% if session.slug %}
-                , "{{ url() }}/session/{{ session.slug }}"
-            {% endif %}
-
-        );
+                    {% if session.slug %}
+                        , "{{ url() }}/session/{{ session.slug }}"
+                    {% endif %}               
+                    );
+                {% endfor %}
+            {% else %}
+                timetable.addEvent('{{ session.name }}', '{{ session.loc }}', new Date('{{ session.start_time }}'), new Date('{{ session.end_time }}')
+    
+                {% if session.slug %}
+                    , "{{ url() }}/session/{{ session.slug }}"
+                {% endif %} 
+                );
+            {% endif %} 
     {% endfor %}
   
     var renderer = new Timetable.Renderer(timetable);
