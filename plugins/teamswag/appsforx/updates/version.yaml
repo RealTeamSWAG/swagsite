@@ -16,3 +16,6 @@
 1.0.11:
     - Add slug
     - create_slug_column.php
+1.0.12:
+    - Make slug nullable
+    - update_nullable_slug.php
