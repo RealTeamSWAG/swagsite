@@ -1,5 +1,6 @@
 $(window).load(function() {
     $(window).scroll(header);
+    header();
 });
 
 var header = function() {
