@@ -25,8 +25,10 @@
                 <a href="{{ speaker.twitter }}"><img id="twitter" src="{{ 'assets/images/transparant.png'|theme }}" alt="twitter {{ speaker.name }}"></a>
             {% endif %}
 
+
             {% if speaker.linkedIn %}
                 <a href="{{ speaker.linkedIn }}"><img id="linkedin" src="{{ 'assets/images/transparant.png'|theme }}" alt="linkedin {{ speaker.name }}"></a>
             {% endif %}
         </div>
     </div>
+{% endfor %}
