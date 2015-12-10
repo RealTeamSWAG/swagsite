@@ -3,54 +3,55 @@ description = "Bigger hero"
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
         <title>Open Belgium - {{ this.page.title }}</title>
-        <meta name="description" content="{{ this.page.meta_description }}">
-        <meta name="title" content="{{ this.page.meta_title }}">
-        <meta name="author" content="Stan Callewaert">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Open Belgium website page">
+        <meta name="keywords" content="Open Belgium, Open Knowledge Foundation, Open Knowledge Belgium, open, data, open data, subscribe, email">
+        <meta name="author" content="Open Belgium">
+        <meta property="og:title" content="Open Belgium" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ url_full() }}" />
+        <meta property="og:image" content="{{ 'assets/images/logo_big.png'|theme }}" />
+        <meta property="og:description" content="Open Belgium is a yearly conference by a group of open enthusiasts" />
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@openbelgium">
+        <meta name="twitter:title" content="Open Belgium 2016">
+        <meta name="twitter:description" content="Open Belgium is a yearly conference by a group of open enthusiasts at @openknowledgebe">
+        <meta name="twitter:image" content="{{ 'assets/images/logo_big.png'|theme }}" />
+        <meta name="twitter:url" content="{{ url_full() }}" />
         <link rel="icon" type="image/x-icon" href="{{ 'assets/images/favicon.ico'|theme }}" />
         <link href="{{ [
             'assets/css/styles.css'
         ]|theme }}" rel="stylesheet">
-        <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <meta property="og:title" content="Open Belgium - {{ this.page.title }}" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ url_full() }}" />
-        <meta property="og:image" content="" />
-        <meta property="og:description" content="{{ this.page.meta_description }}" />
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@OpenBelgium">
-        <meta name="twitter:title" content="Open Belgium - {{ this.page.title }}">
-        <meta name="twitter:description" content="{{ this.page.meta_description }}">
-        <meta name="twitter:image" content="" />
-        <meta name="twitter:url" content="{{ url_full() }}" />
         <script type="application/ld+json">
-            {
-                "@context" : "http://schema.org",
-                "@type" : "Event",
-                "name" : "Open Belgium 2016",
-                "startDate" : "2016-02-29T08:30",
-                "endDate" : "2016-02-29T19:00",
-                "url" : "http://2016.openbelgium.be",
-                "location" : {
-                    "@type" : "Place",
-                    "name" : "Hof van Liere",
-                    "address": {
-                        "@type" : "PostalAddress",
-                        "streetAddress" : "Prinsstraat 13",
-                        "addressLocality" : "Antwerp",
-                        "addressRegion" : "Antwerp",
-                        "postalCode" : "2000"
-                    }
-                },
-                "offers" : {
-                    "@type" : "Offer",
-                    "name": "Open Belgium 2016"
-                },
-                "previousStartDate" : "2015-02-23T09:30"
-            }
+        {
+            "@context" : "http://schema.org",
+            "@type" : "Event",
+            "name" : "Open Belgium 2016",
+            "startDate" : "2016-02-29T09:00",
+            "endDate" : "2016-02-29T22:00",
+            "url" : "http://2016.openbelgium.be",
+            "location" : {
+                "@type" : "Place",
+                "name" : "Hof van Liere",
+                "address": {
+                    "@type" : "PostalAddress",
+                    "streetAddress" : "Prinsstraat 13",
+                    "addressLocality" : "Antwerp",
+                    "addressRegion" : "Antwerp",
+                    "postalCode" : "2000"
+                }
+            },
+            "offers" : {
+                "@type" : "Offer",
+                "name": "Open Belgium 2016"
+            },
+            "previousStartDate" : "2015-02-23T09:30"
+        }
         </script>
     </head>
     <body>
