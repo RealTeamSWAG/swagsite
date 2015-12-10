@@ -19,3 +19,10 @@ For your local development server, you’ll want to change the config/database f
 ### Step 3: Migrate the database
 
 `php artisan october:up`
+
+## Special Notes
+
+### Timetable.js
+
+The timetable that is shown on the programme page is a slightly modified version to implement variable colors for each session.  
+The script found in themes/appsforghent/assets/javascript/timetable.min.js is modified at line 133, so it is not recommended to update the script (unless the new version adds color support that is)  
