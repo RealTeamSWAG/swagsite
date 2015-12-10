@@ -27,6 +27,7 @@ fields:
         default: false
         
     color:
+        label: Color
         type: colorpicker
 
     start_time:
@@ -37,7 +38,7 @@ fields:
         label: Duration
         type: number
 
-    description:
+    descr:
       label: Description
       cssClass: field-slim
       type: codeeditor

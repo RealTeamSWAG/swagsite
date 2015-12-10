@@ -11,7 +11,9 @@ class UpdateSessionsTable extends Migration
         Schema::table('teamswag_appsforx_sessions', function($table)
         {
             $table->string('color')->nullable()->add();
-            $table->string('is_global')->add();
+            $table->boolean('is_global')->add();
+            $table->dropColumn('description');
+            $table->text('descr')->add();
         });
     }
 

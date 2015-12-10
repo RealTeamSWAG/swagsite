@@ -1,15 +1,12 @@
 1.0.1:
     - Executing first migrations.
     - create_events_table.php
-1.0.2:
-    - Create sessions
     - create_sessions_table.php
-1.0.3:
-    - Create pivot table sessions speakers
     - create_session_speaker_pivot_table.php
-1.0.4:
-    - Add locations
     - create_locations_table.php
-1.0.18:
-    - Update Sessions
+1.0.2:
+    - Update sessions and speakers table.
     - update_sessions_table.php
+    - update_speakers_table.php
+    
+    

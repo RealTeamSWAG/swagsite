@@ -30,11 +30,15 @@ fields:
         type: text
 
     function:
-        label: function
+        label: Function
         type: text
 
     organisation:
-        label: organisation
+        label: Organisation
+        type: text
+        
+    website:
+        label: Website
         type: text
 
     sessions:
@@ -43,7 +47,7 @@ fields:
         type: relation
 
     avatar:
-        label: 'Avatar'
+        label: Avatar
         type: fileupload
         mode: image
         imageWidth: 200
