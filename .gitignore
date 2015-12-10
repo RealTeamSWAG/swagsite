@@ -16,3 +16,4 @@ selenium.php
 .env.php
 /config/local
 /modules
+/modules/*
