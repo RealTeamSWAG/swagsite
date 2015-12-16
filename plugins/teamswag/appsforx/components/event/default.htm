@@ -2,15 +2,19 @@
 
 <div id="event" class="clearfix">
     <h3 id="event-title">{{ session.name }}</h3>
-    <ul>
-        <li>Time: {{ session.start }}-{{ session.end }}</li>
-        <li>Location: {{ session.Location.name }}</li>
-        <li>Level: {{ session.niveau }}</li>
-        <li>Type: {{ session.type }}</li>
-    </ul>
-    <p>
-        {{ session.descr|raw }}
-    </p>
+    <div class="event-desc">
+        <ul>
+            <li>Time: {{ session.start }}-{{ session.end }}</li>
+            <li>Location: {{ session.Location.name }}</li>
+            <li>Level: {{ session.niveau }}</li>
+            <li>Type: {{ session.type }}</li>
+        </ul>
+    </div>
+    <div class="event-long-desc">
+        <p>
+            {{ session.descr|raw }}
+        </p>
+    </div>
 </div>
 
 <div id="speakers" class="clearfix">
