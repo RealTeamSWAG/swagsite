@@ -1,0 +1,19 @@
+title = "Nieuws"
+url = "/twitter"
+layout = "default"
+is_hidden = 0
+meta_title = "twitter"
+==
+<div id="about">
+    <div id="twitter-wall">
+        <ul>Loading...</ul>
+    </div>
+</div>
+
+{% put scripts %}
+	<script src="{{ [
+        'assets/javascript/twitter.js',
+        'assets/javascript/Tweetie/tweetie.js'
+    ]|theme }}"></script>
+{% endput %}
+    

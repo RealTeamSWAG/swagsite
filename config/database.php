@@ -58,7 +58,7 @@ return [
             'port'      => '',
             'database'  => 'swagsite',
             'username'  => 'root',
-            'password'  => 'Azerty123',
+            'password'  => 'bitnami',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
