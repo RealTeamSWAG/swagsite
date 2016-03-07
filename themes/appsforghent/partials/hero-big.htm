@@ -7,7 +7,8 @@ description = "Hero of the homepage"
                 <li><a href="{{ 'home'|page }}"></a></li>
             </div>
             <div id="right">
-                <li><a href="https://openbelgium16.eventbrite.nl">get tickets</a></li>
+            <!--    <li><a href="https://openbelgium16.eventbrite.nl">get tickets</a></li> -->
+                <li><a href="{{ 'presentations'|page }}">presentations</a></li>
                 <a href="" id="hamburger-menu-logo"><img src="{{ 'assets/images/hamburger.png'|theme }}" alt="hamburger menu"></a>
             </div>
             <div class="clearfix" id="center">
@@ -27,10 +28,14 @@ description = "Hero of the homepage"
     <img src="{{ 'assets/images/logo.png'|theme }}" alt="Logo Open Belgium 2016" />
 </div>
 
-<p id="time"></p>
+<p id="time">
+    <span>See you next year</span>
+</p> 
+
 
 <div id="tickets">
-    <a href="https://openbelgium16.eventbrite.nl">get tickets</a>
+   <!-- <a href="https://openbelgium16.eventbrite.nl">get tickets</a> -->
+   <a href="{{ 'presentations'|page }}">presentations</a>
 </div>
 
 <div id="arrow-down">
